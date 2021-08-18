@@ -1,17 +1,16 @@
 import { IconProps } from './components/Icon'
-import { faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 export const UrlList: IconProps[] = [
   {
     name: 'Google',
     url: 'https://google.com',
-    icon: faGoogle,
+    icon: null,
     backgroundColor: '#F8BA3C',
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com',
-    icon: faTwitter,
+    icon: null,
     backgroundColor: '#42A4ED',
   },
   {

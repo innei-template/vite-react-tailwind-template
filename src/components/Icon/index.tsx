@@ -1,10 +1,8 @@
 import React, { FC } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 export interface IconProps {
   backgroundColor: string
-  icon: IconDefinition | string
+  icon: string | null
   name: string
   url: string
 }
@@ -19,13 +17,7 @@ export const Icon: FC<IconProps> = (props) => {
             className={'iconfont' + ' ' + icon + ' i-ico'}
             style={{ color: '#fff' }}
           ></div>
-        ) : (
-          <FontAwesomeIcon
-            icon={icon}
-            className={'i-ico'}
-            style={{ color: '#fff' }}
-          />
-        )}
+        ) : null}
       </div>
       <div className="icon-name">{props.name}</div>
     </a>
