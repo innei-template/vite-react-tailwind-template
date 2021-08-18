@@ -14,7 +14,7 @@ export const SearchInput: FC = (props) => {
         return <div className="iconfont icon-bing"></div>
       }
       case SearchEngine.Google: {
-        return <FontAwesomeIcon icon={faGoogle} />
+        return null
       }
     }
   }
@@ -52,7 +52,7 @@ export const SearchInput: FC = (props) => {
         onKeyDown={handleSearch}
       />
       <div className="search-icon">
-        <FontAwesomeIcon icon={faSearch} />
+        {/* <FontAwesomeIcon icon={faSearch} /> */}
       </div>
     </div>
   )
