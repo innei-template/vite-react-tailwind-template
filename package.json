@@ -16,7 +16,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,less}": [
-      "prettier --ignore-path ./.prettierignore --write ",
+      "prettier --ignore-path ./.prettierignore --write "
+    ],
+    "*.{js,jsx,ts,tsx}": [
       "eslint"
     ]
   },
