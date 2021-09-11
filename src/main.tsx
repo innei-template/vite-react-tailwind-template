@@ -4,6 +4,6 @@ import './index.css'
 
 const App = document.getElementById('root')
 const Root: FC = () => {
-  return <span>Hello, world</span>
+  return <span className="text-3xl">Hello, world</span>
 }
 ReactDOM.render(<Root />, App)
