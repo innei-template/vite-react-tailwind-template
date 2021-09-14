@@ -1,5 +1,1 @@
 @import './tailwind.css';
-
-#root {
-  @apply max-w-[500px] pt-6 text-center m-auto;
-}
