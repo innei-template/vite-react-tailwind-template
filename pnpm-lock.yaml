@@ -14,7 +14,7 @@ specifiers:
   prettier: 2.4.0
   react: 17.0.2
   react-dom: 17.0.2
-  tailwindcss: 2.2.15
+  tailwindcss: 2.2.19
   typescript: 4.4.3
   vite: 2.5.6
   vite-plugin-checker: 0.3.4
@@ -36,7 +36,7 @@ devDependencies:
   postcss: 8.3.6
   postcss-nested: 5.0.6_postcss@8.3.6
   prettier: 2.4.0
-  tailwindcss: 2.2.15_4dc2d3db2b138fb8fa7d5c7b0c803aba
+  tailwindcss: 2.2.19_4dc2d3db2b138fb8fa7d5c7b0c803aba
   typescript: 4.4.3
   vite: 2.5.6
   vite-plugin-checker: 0.3.4_vite@2.5.6
@@ -1397,6 +1397,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -2711,8 +2712,8 @@ packages:
       strip-ansi: 6.0.0
     dev: true
 
-  /tailwindcss/2.2.15_4dc2d3db2b138fb8fa7d5c7b0c803aba:
-    resolution: {integrity: sha512-WgV41xTMbnSoTNMNnJvShQZ+8GmY86DmXTrCgnsveNZJdlybfwCItV8kAqjYmU49YiFr+ofzmT1JlAKajBZboQ==}
+  /tailwindcss/2.2.19_4dc2d3db2b138fb8fa7d5c7b0c803aba:
+    resolution: {integrity: sha512-6Ui7JSVtXadtTUo2NtkBBacobzWiQYVjYW0ZnKaP9S1ZCKQ0w7KVNz+YSDI/j7O7KCMHbOkz94ZMQhbT9pOqjw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
