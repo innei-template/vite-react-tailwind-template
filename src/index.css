@@ -1,1 +1,7 @@
 @import './tailwind.css';
+
+.test {
+  & {
+    color: red;
+  }
+}
