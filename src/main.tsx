@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
+
 import './index.css'
 
 const App = document.getElementById('root')
@@ -10,4 +11,5 @@ const Root: FC = () => {
     </div>
   )
 }
+
 ReactDOM.render(<Root />, App)

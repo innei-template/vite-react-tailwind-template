@@ -1,7 +1,1 @@
-@import './tailwind.css';
-
-.test {
-  & {
-    color: red;
-  }
-}
+@import './assets/styles/atom.css';

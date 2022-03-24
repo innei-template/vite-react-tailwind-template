@@ -7,7 +7,7 @@ This template provide toolchain below:
 - ESLint
 - Prettier
 - Git Hook (Husky, Lint Staged)
-- TailwindCSS 2 (JIT)
+- TailwindCSS 3
 
 # Usage
 
