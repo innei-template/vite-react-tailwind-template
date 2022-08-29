@@ -1,15 +1,15 @@
 import { defineConfig } from 'vite'
-import Checker from 'vite-plugin-checker'
+import { checker } from 'vite-plugin-checker'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import reactRefresh from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     reactRefresh(),
     tsconfigPaths(),
-    Checker({
+    checker({
       typescript: true,
       enableBuild: true,
     }),

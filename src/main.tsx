@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import './index.css'
 
@@ -12,4 +12,4 @@ const Root: FC = () => {
   )
 }
 
-ReactDOM.render(<Root />, App)
+createRoot(App!).render(<Root />)
