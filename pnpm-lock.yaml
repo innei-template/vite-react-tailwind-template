@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@innei-util/eslint-config-react-ts': ^0.2.1
-  '@innei-util/prettier': ^0.8.2
+  '@innei-util/eslint-config-react-ts': 0.2.1
+  '@innei-util/prettier': 0.8.2
   '@types/node': 18.7.13
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
-  '@vitejs/plugin-react': ^2
+  '@vitejs/plugin-react': 2.1.0
   autoprefixer: 10.4.7
   eslint: 8.20.0
   husky: 8.0.1
@@ -32,7 +32,7 @@ devDependencies:
   '@types/node': 18.7.13
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
-  '@vitejs/plugin-react': 2.0.1_vite@3.0.2
+  '@vitejs/plugin-react': 2.1.0_vite@3.0.2
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.20.0
   husky: 8.0.1
@@ -40,7 +40,7 @@ devDependencies:
   postcss: 8.4.14
   postcss-import: 14.1.0_postcss@8.4.14
   prettier: 2.7.1
-  tailwindcss: 3.1.6
+  tailwindcss: 3.1.6_postcss@8.4.14
   typescript: 4.7.4
   vite: 3.0.2
   vite-plugin-checker: 0.5.0_ipaipmucwgeazb4a5bgdi5uyea
@@ -679,8 +679,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-react/2.0.1_vite@3.0.2:
-    resolution: {integrity: sha512-uINzNHmjrbunlFtyVkST6lY1ewSfz/XwLufG0PIqvLGnpk2nOIOa/1CACTDNcKi1/RwaCzJLmsXwm1NsUVV/NA==}
+  /@vitejs/plugin-react/2.1.0_vite@3.0.2:
+    resolution: {integrity: sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
@@ -1960,12 +1960,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-core-module/2.8.1:
-    resolution: {integrity: sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module/2.9.0:
     resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
     dependencies:
@@ -2661,7 +2655,7 @@ packages:
     resolution: {integrity: sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.8.1
+      is-core-module: 2.9.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -2901,10 +2895,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.6:
+  /tailwindcss/3.1.6_postcss@8.4.14:
     resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
