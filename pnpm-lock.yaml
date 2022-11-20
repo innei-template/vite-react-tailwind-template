@@ -5,7 +5,7 @@ specifiers:
   '@innei-util/prettier': ^0.8.2
   '@types/node': 18.7.13
   '@types/react': 18.0.15
-  '@types/react-dom': 18.0.6
+  '@types/react-dom': 18.0.9
   '@vitejs/plugin-react': ^2
   autoprefixer: 10.4.7
   eslint: 8.20.0
@@ -31,7 +31,7 @@ devDependencies:
   '@innei-util/prettier': 0.8.2
   '@types/node': 18.7.13
   '@types/react': 18.0.15
-  '@types/react-dom': 18.0.6
+  '@types/react-dom': 18.0.9
   '@vitejs/plugin-react': 2.0.1_vite@3.0.2
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.20.0
@@ -40,7 +40,7 @@ devDependencies:
   postcss: 8.4.14
   postcss-import: 14.1.0_postcss@8.4.14
   prettier: 2.7.1
-  tailwindcss: 3.1.6
+  tailwindcss: 3.1.6_postcss@8.4.14
   typescript: 4.7.4
   vite: 3.0.2
   vite-plugin-checker: 0.5.0_ipaipmucwgeazb4a5bgdi5uyea
@@ -493,8 +493,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom/18.0.6:
-    resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
+  /@types/react-dom/18.0.9:
+    resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
       '@types/react': 18.0.15
     dev: true
@@ -2901,10 +2901,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.6:
+  /tailwindcss/3.1.6_postcss@8.4.14:
     resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
