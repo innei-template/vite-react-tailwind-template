@@ -19,7 +19,7 @@ specifiers:
   tailwindcss: 3.1.6
   typescript: 4.7.4
   vite: 3.0.2
-  vite-plugin-checker: 0.5.0
+  vite-plugin-checker: 0.5.6
   vite-tsconfig-paths: 3.5.0
 
 dependencies:
@@ -40,10 +40,10 @@ devDependencies:
   postcss: 8.4.14
   postcss-import: 14.1.0_postcss@8.4.14
   prettier: 2.7.1
-  tailwindcss: 3.1.6
+  tailwindcss: 3.1.6_postcss@8.4.14
   typescript: 4.7.4
   vite: 3.0.2
-  vite-plugin-checker: 0.5.0_ipaipmucwgeazb4a5bgdi5uyea
+  vite-plugin-checker: 0.5.6_ipaipmucwgeazb4a5bgdi5uyea
   vite-tsconfig-paths: 3.5.0_vite@3.0.2
 
 packages:
@@ -1716,6 +1716,15 @@ packages:
       universalify: 2.0.0
     dev: true
 
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
@@ -2901,10 +2910,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.6:
+  /tailwindcss/3.1.6_postcss@8.4.14:
     resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -3053,23 +3064,35 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /vite-plugin-checker/0.5.0_ipaipmucwgeazb4a5bgdi5uyea:
-    resolution: {integrity: sha512-IuCHIpnJwRxDupd+jVNwza07+ajt4jFItwWMFEF2cDDp5E92ePx1eVn91JMsa02XkquR1s6L4VZX8/RTFamD9w==}
+  /vite-plugin-checker/0.5.6_ipaipmucwgeazb4a5bgdi5uyea:
+    resolution: {integrity: sha512-ftRyON0gORUHDxcDt2BErmsikKSkfvl1i2DoP6Jt2zDO9InfvM6tqO1RkXhSjkaXEhKPea6YOnhFaZxW3BzudQ==}
     engines: {node: '>=14.16'}
     peerDependencies:
       eslint: '>=7'
+      meow: ^9.0.0
+      optionator: ^0.9.1
+      stylelint: '>=13'
       typescript: '*'
-      vite: ^2.0.0 || ^3.0.0-0
+      vite: '>=2.0.0'
       vls: '*'
       vti: '*'
+      vue-tsc: '*'
     peerDependenciesMeta:
       eslint:
+        optional: true
+      meow:
+        optional: true
+      optionator:
+        optional: true
+      stylelint:
         optional: true
       typescript:
         optional: true
       vls:
         optional: true
       vti:
+        optional: true
+      vue-tsc:
         optional: true
     dependencies:
       '@babel/code-frame': 7.18.6
@@ -3079,6 +3102,7 @@ packages:
       commander: 8.3.0
       eslint: 8.20.0
       fast-glob: 3.2.11
+      fs-extra: 11.1.0
       lodash.debounce: 4.0.8
       lodash.pick: 4.4.0
       npm-run-path: 4.0.1
