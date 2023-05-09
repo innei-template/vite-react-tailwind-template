@@ -9,7 +9,7 @@ specifiers:
   '@vitejs/plugin-react': ^2
   autoprefixer: 10.4.7
   eslint: 8.20.0
-  husky: 8.0.1
+  husky: 8.0.3
   lint-staged: 13.2.2
   postcss: 8.4.14
   postcss-import: 14.1.0
@@ -35,7 +35,7 @@ devDependencies:
   '@vitejs/plugin-react': 2.0.1_vite@3.0.2
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.20.0
-  husky: 8.0.1
+  husky: 8.0.3
   lint-staged: 13.2.2
   postcss: 8.4.14
   postcss-import: 14.1.0_postcss@8.4.14
@@ -1895,8 +1895,8 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: true
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
