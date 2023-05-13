@@ -27,7 +27,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@innei-util/eslint-config-react-ts": "^0.2.1",
+    "@innei-util/eslint-config-react-ts": "^0.8.0",
     "@innei-util/prettier": "^0.8.2",
     "@types/node": "18.16.6",
     "@types/react": "18.0.15",

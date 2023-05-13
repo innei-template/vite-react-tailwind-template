@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@innei-util/eslint-config-react-ts': ^0.2.1
+  '@innei-util/eslint-config-react-ts': ^0.8.0
   '@innei-util/prettier': ^0.8.2
   '@types/node': 18.16.6
   '@types/react': 18.0.15
@@ -27,7 +27,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@innei-util/eslint-config-react-ts': 0.2.1_he2ccbldppg44uulnyq4rwocfa
+  '@innei-util/eslint-config-react-ts': 0.8.2_he2ccbldppg44uulnyq4rwocfa
   '@innei-util/prettier': 0.8.2
   '@types/node': 18.16.6
   '@types/react': 18.0.15
@@ -368,8 +368,8 @@ packages:
       - supports-color
     dev: true
 
-  /@innei-util/eslint-config-react-ts/0.2.1_he2ccbldppg44uulnyq4rwocfa:
-    resolution: {integrity: sha512-6wfdPryn1xi0Q8FFR5v8qiZNIa58WE7LFQc2e0lxfQAeUmdhrCyIGCv+O3sZzCe7pH48WdWy3J6Eo4bcSaI9Hw==}
+  /@innei-util/eslint-config-react-ts/0.8.2_he2ccbldppg44uulnyq4rwocfa:
+    resolution: {integrity: sha512-iyqzeKxGXgev5okLOrxB96GeKufB+/ao2TPOT+j/s7DGY4jJ8H+SHnnJxGJOXeZIScq7M/gUU60Jp8CEuecjrQ==}
     peerDependencies:
       typescript: '>=4'
     dependencies:
