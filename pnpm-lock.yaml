@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@innei-util/eslint-config-react-ts': ^0.2.1
   '@innei-util/prettier': ^0.8.2
-  '@types/node': 18.16.6
+  '@types/node': 18.16.8
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
   '@vitejs/plugin-react': ^2
@@ -29,7 +29,7 @@ dependencies:
 devDependencies:
   '@innei-util/eslint-config-react-ts': 0.2.1_he2ccbldppg44uulnyq4rwocfa
   '@innei-util/prettier': 0.8.2
-  '@types/node': 18.16.6
+  '@types/node': 18.16.8
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
   '@vitejs/plugin-react': 2.0.1_vite@3.0.2
@@ -477,8 +477,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node/18.16.6:
-    resolution: {integrity: sha512-N7KINmeB8IN3vRR8dhgHEp+YpWvGFcpDoh5XZ8jB5a00AdFKCKEyyGTOPTddUf4JqU1ZKTVxkOxakDvchNVI2Q==}
+  /@types/node/18.16.8:
+    resolution: {integrity: sha512-p0iAXcfWCOTCBbsExHIDFCfwsqFwBTgETJveKMT+Ci3LY9YqQCI91F5S+TB20+aRCXpcWfvx5Qr5EccnwCm2NA==}
     dev: true
 
   /@types/parse-author/2.0.1:
