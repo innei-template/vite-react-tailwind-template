@@ -20,7 +20,7 @@ specifiers:
   typescript: 4.7.4
   vite: 3.0.2
   vite-plugin-checker: 0.6.0
-  vite-tsconfig-paths: 3.5.0
+  vite-tsconfig-paths: 3.6.0
 
 dependencies:
   react: 18.2.0
@@ -44,7 +44,7 @@ devDependencies:
   typescript: 4.7.4
   vite: 3.0.2
   vite-plugin-checker: 0.6.0_ipaipmucwgeazb4a5bgdi5uyea
-  vite-tsconfig-paths: 3.5.0_vite@3.0.2
+  vite-tsconfig-paths: 3.6.0_vite@3.0.2
 
 packages:
 
@@ -3122,8 +3122,8 @@ packages:
       vscode-uri: 3.0.3
     dev: true
 
-  /vite-tsconfig-paths/3.5.0_vite@3.0.2:
-    resolution: {integrity: sha512-NKIubr7gXgh/3uniQaOytSg+aKWPrjquP6anAy+zCWEn6h9fB8z2/qdlfQrTgZWaXJ2pHVlllrSdRZltHn9P4g==}
+  /vite-tsconfig-paths/3.6.0_vite@3.0.2:
+    resolution: {integrity: sha512-UfsPYonxLqPD633X8cWcPFVuYzx/CMNHAjZTasYwX69sXpa4gNmQkR0XCjj82h7zhLGdTWagMjC1qfb9S+zv0A==}
     peerDependencies:
       vite: '>2.0.0-0'
     dependencies:
