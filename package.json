@@ -29,7 +29,7 @@
   "devDependencies": {
     "@innei-util/eslint-config-react-ts": "^0.2.1",
     "@innei-util/prettier": "^0.8.2",
-    "@types/node": "18.16.14",
+    "@types/node": "18.19.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "^2",
