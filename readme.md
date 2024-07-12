@@ -4,10 +4,12 @@ This template provide toolchain below:
 
 - Vite
 - React, ReactDOM
-- ESLint
+- Biomejs
 - Prettier
-- Git Hook (Husky, Lint Staged)
+- Git Hook (simple-git-hook, Lint Staged)
 - TailwindCSS 3
+- daisyui
+- React Router DOM (auto generated routes)
 
 # Usage
 

@@ -14,4 +14,7 @@ export default defineConfig({
       enableBuild: true,
     }),
   ],
+  define: {
+    APP_DEV_CWD: JSON.stringify(process.cwd()),
+  },
 })

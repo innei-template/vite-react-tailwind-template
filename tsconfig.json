@@ -19,6 +19,17 @@
     "skipDefaultLibCheck": true,
     "noImplicitAny": false,
     "noEmit": true,
-    "jsx": "preserve"
-  }
+    "jsx": "preserve",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@pkg": [
+        "./package.json"
+      ]
+    },
+  },
+  "include": [
+    "./src/**/*",
+  ]
 }

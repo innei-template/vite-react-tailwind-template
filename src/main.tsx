@@ -1,16 +1,18 @@
-import type { FC } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import './styles/index.css'
 
-const App = document.getElementById('root')
-const Root: FC = () => {
-  return (
-    <div className="absolute h-full w-full flex items-center justify-center">
-      <i className="i-mingcute-hand-fill size-5 mr-2" />
-      <span className="text-3xl">Hello, world</span>
-    </div>
-  )
-}
+import { ClickToComponent } from 'click-to-react-component'
+import React from 'react'
+import { RouterProvider } from 'react-router-dom'
 
-createRoot(App!).render(<Root />)
+import { router } from './router'
+
+const $container = document.querySelector('#root') as HTMLElement
+
+createRoot($container).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+    <ClickToComponent />
+  </React.StrictMode>,
+)
