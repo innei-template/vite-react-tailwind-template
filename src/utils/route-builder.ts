@@ -1,6 +1,6 @@
+import { Fragment } from 'react/jsx-runtime'
 import { get, omit } from 'lodash-es'
 import type { RouteObject } from 'react-router-dom'
-import { Fragment } from 'react/jsx-runtime'
 
 type NestedStructure = { [key: string]: NestedStructure }
 

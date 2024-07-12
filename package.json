@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "simple-git-hooks",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
@@ -40,7 +40,7 @@
     "@biomejs/biome": "1.8.3",
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify-json/mingcute": "1.1.18",
-    "@innei-util/prettier": "^0.8.2",
+    "@innei/prettier": "^0.13.3",
     "@tailwindcss/container-queries": "0.1.1",
     "@tailwindcss/typography": "0.5.13",
     "@types/lodash-es": "4.17.12",
