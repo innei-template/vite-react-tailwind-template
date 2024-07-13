@@ -8,6 +8,7 @@ declare global {
   export type Nullable<T> = T | null | undefined
 
   export const APP_DEV_CWD: string
+  export const APP_NAME: string
 }
 
 export {}
