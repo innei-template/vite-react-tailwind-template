@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { produce } from 'immer'
+ 
 import type {
   InfiniteData,
   QueryFunction,
   QueryKey,
 } from '@tanstack/react-query'
 import type { Draft, nothing } from 'immer'
+import { produce } from 'immer'
 
 import { queryClient } from './query-client'
 

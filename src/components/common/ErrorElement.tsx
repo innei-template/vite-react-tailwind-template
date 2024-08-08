@@ -1,6 +1,6 @@
+import { repository } from '@pkg'
 import { useEffect, useRef } from 'react'
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom'
-import { repository } from '@pkg'
 
 import { attachOpenInEditor } from '~/utils/dev'
 

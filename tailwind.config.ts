@@ -1,9 +1,8 @@
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
+import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import { withTV } from 'tailwind-variants/transformer'
 import type { Config } from 'tailwindcss'
-
-import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
-import typography from '@tailwindcss/typography'
 
 require('./cssAsPlugin')
 

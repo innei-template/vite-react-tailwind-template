@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+ 
 import type {
   InfiniteData,
   QueryKey,
@@ -8,8 +7,10 @@ import type {
   UseQueryOptions,
   UseQueryResult,
 } from '@tanstack/react-query'
-import type { DefinedQuery } from '~/utils/defineQuery'
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import type { FetchError } from 'ofetch'
+
+import type { DefinedQuery } from '~/utils/defineQuery'
 
 // TODO split normal define query and infinite define query for better type checking
 export type SafeReturnType<T> = T extends (...args: any[]) => infer R

@@ -1,7 +1,7 @@
-import { useCallback } from 'react'
+import type { Atom, PrimitiveAtom } from 'jotai'
 import { createStore, useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { selectAtom } from 'jotai/utils'
-import type { Atom, PrimitiveAtom } from 'jotai'
+import { useCallback } from 'react'
 
 export const jotaiStore = createStore()
 

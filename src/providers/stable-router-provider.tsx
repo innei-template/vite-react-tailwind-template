@@ -1,11 +1,11 @@
 import { useLayoutEffect } from 'react'
+import type { NavigateFunction } from 'react-router-dom'
 import {
   useLocation,
   useNavigate,
   useParams,
   useSearchParams,
 } from 'react-router-dom'
-import type { NavigateFunction } from 'react-router-dom'
 
 import { setNavigate, setRoute } from '~/atoms/route'
 
