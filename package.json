@@ -40,7 +40,7 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "10.4.19",
+    "autoprefixer": "10.4.20",
     "click-to-react-component": "1.1.0",
     "daisyui": "4.12.10",
     "eslint": "9.8.0",
