@@ -8,6 +8,7 @@ export default defineConfig(
     ignores: [],
     preferESM: false,
     react: 'vite',
+    tailwindCSS: true,
   },
   {
     settings: {
