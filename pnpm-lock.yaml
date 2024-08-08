@@ -47,7 +47,7 @@ importers:
     devDependencies:
       '@egoist/tailwindcss-icons':
         specifier: 1.8.1
-        version: 1.8.1(tailwindcss@3.4.6)
+        version: 1.8.1(tailwindcss@3.4.9)
       '@iconify-json/mingcute':
         specifier: 1.1.18
         version: 1.1.18
@@ -56,10 +56,10 @@ importers:
         version: 0.14.0
       '@tailwindcss/container-queries':
         specifier: 0.1.1
-        version: 0.1.1(tailwindcss@3.4.6)
+        version: 0.1.1(tailwindcss@3.4.9)
       '@tailwindcss/typography':
         specifier: 0.5.13
-        version: 0.5.13(tailwindcss@3.4.6)
+        version: 0.5.13(tailwindcss@3.4.9)
       '@types/lodash-es':
         specifier: 4.17.12
         version: 4.17.12
@@ -89,7 +89,7 @@ importers:
         version: 9.8.0
       eslint-config-hyoban:
         specifier: 3.1.0
-        version: 3.1.0(@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(tailwindcss@3.4.6)(typescript@5.5.4)
+        version: 3.1.0(@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(tailwindcss@3.4.9)(typescript@5.5.4)
       lint-staged:
         specifier: 15.2.7
         version: 15.2.7
@@ -110,16 +110,16 @@ importers:
         version: 2.11.1
       tailwind-scrollbar:
         specifier: 3.1.0
-        version: 3.1.0(tailwindcss@3.4.6)
+        version: 3.1.0(tailwindcss@3.4.9)
       tailwind-variants:
         specifier: 0.2.1
-        version: 0.2.1(tailwindcss@3.4.6)
+        version: 0.2.1(tailwindcss@3.4.9)
       tailwindcss:
-        specifier: 3.4.6
-        version: 3.4.6
+        specifier: 3.4.9
+        version: 3.4.9
       tailwindcss-animated:
         specifier: 1.1.2
-        version: 1.1.2(tailwindcss@3.4.6)
+        version: 1.1.2(tailwindcss@3.4.9)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -2914,8 +2914,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.1.0'
 
-  tailwindcss@3.4.6:
-    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
+  tailwindcss@3.4.9:
+    resolution: {integrity: sha512-1SEOvRr6sSdV5IDf9iC+NU4dhwdqzF4zKKq3sAbasUWHEM6lsMhX+eNN5gkPx1BvLFEnZQEUFbXnGj8Qlp83Pg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3515,10 +3515,10 @@ snapshots:
   '@dual-bundle/import-meta-resolve@4.1.0':
     optional: true
 
-  '@egoist/tailwindcss-icons@1.8.1(tailwindcss@3.4.6)':
+  '@egoist/tailwindcss-icons@1.8.1(tailwindcss@3.4.9)':
     dependencies:
       '@iconify/utils': 2.1.25
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
     transitivePeerDependencies:
       - supports-color
 
@@ -4035,17 +4035,17 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.6)':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.9)':
     dependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.6)':
+  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.9)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
   '@tanstack/query-core@5.51.9': {}
 
@@ -4691,7 +4691,7 @@ snapshots:
       find-up-simple: 1.0.0
       parse-gitignore: 2.0.0
 
-  eslint-config-hyoban@3.1.0(@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(tailwindcss@3.4.6)(typescript@5.5.4):
+  eslint-config-hyoban@3.1.0(@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(tailwindcss@3.4.9)(typescript@5.5.4):
     dependencies:
       '@eslint-react/eslint-plugin': 1.9.1(eslint@9.8.0)(typescript@5.5.4)
       '@eslint/js': 9.8.0
@@ -4712,7 +4712,7 @@ snapshots:
       eslint-plugin-react-refresh: 0.4.9(eslint@9.8.0)
       eslint-plugin-regexp: 2.6.0(eslint@9.8.0)
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.8.0)
-      eslint-plugin-tailwindcss: 3.17.4(tailwindcss@3.4.6)
+      eslint-plugin-tailwindcss: 3.17.4(tailwindcss@3.4.9)
       eslint-plugin-unicorn: 55.0.0(eslint@9.8.0)
       eslint-plugin-unused-imports: 4.0.1(@typescript-eslint/eslint-plugin@8.0.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)
       globals: 15.9.0
@@ -4918,11 +4918,11 @@ snapshots:
     dependencies:
       eslint: 9.8.0
 
-  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.6):
+  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.9):
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.40
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
   eslint-plugin-unicorn@55.0.0(eslint@9.8.0):
     dependencies:
@@ -6165,20 +6165,20 @@ snapshots:
 
   tailwind-merge@2.4.0: {}
 
-  tailwind-scrollbar@3.1.0(tailwindcss@3.4.6):
+  tailwind-scrollbar@3.1.0(tailwindcss@3.4.9):
     dependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
-  tailwind-variants@0.2.1(tailwindcss@3.4.6):
+  tailwind-variants@0.2.1(tailwindcss@3.4.9):
     dependencies:
       tailwind-merge: 2.4.0
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
-  tailwindcss-animated@1.1.2(tailwindcss@3.4.6):
+  tailwindcss-animated@1.1.2(tailwindcss@3.4.9):
     dependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.9
 
-  tailwindcss@3.4.6:
+  tailwindcss@3.4.9:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
