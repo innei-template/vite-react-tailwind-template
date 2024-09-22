@@ -1,14 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 html {
-  font-size: 14px;
-  line-height: 1.5;
-
   @apply font-sans;
 }
 
@@ -16,30 +10,11 @@ html body {
   @apply max-w-screen overflow-x-hidden;
 }
 
-@media print {
-  html {
-    font-size: 12px;
-  }
-}
-
 /* @media (min-width: 2160px) {
   html {
     font-size: 15px;
   }
 } */
-
-.prose {
-  max-width: 100% !important;
-  font-size: 1.1rem;
-
-  p {
-    @apply break-words;
-  }
-
-  figure img {
-    @apply mb-0 mt-0;
-  }
-}
 
 *:focus {
   outline: none;
@@ -54,18 +29,6 @@ html body {
 
   &:hover {
     scrollbar-color: auto;
-  }
-}
-
-.animate-ping {
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
   }
 }
 
@@ -103,5 +66,16 @@ a {
     top: 0;
     border-radius: 1em;
     background-color: theme(colors.accent);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }

@@ -1,14 +1,19 @@
 // @ts-check
 import { defineConfig } from 'eslint-config-hyoban'
 
+import recursiveSort from './plugins/eslint-recursive-sort'
+
 export default defineConfig(
   {
     formatting: false,
     lessOpinionated: true,
-    ignores: [],
+    ignores: [
+      'src/renderer/src/hono.ts',
+      'src/hono.ts',
+      'packages/shared/src/hono.ts',
+      'resources/**',
+    ],
     preferESM: false,
-    react: 'vite',
-    tailwindCSS: true,
   },
   {
     settings: {
@@ -17,45 +22,36 @@ export default defineConfig(
       },
     },
     rules: {
-      'package-json/valid-package-def': 'off',
-      '@eslint-react/no-missing-key': 'warn',
-      'no-restricted-syntax': 'off',
-      'import/no-anonymous-default-export': 'off',
-      eqeqeq: 'warn',
-      'no-console': 'warn',
-      '@typescript-eslint/no-unsafe-function-type': 'off',
-      'no-empty': 'warn',
-      '@typescript-eslint/no-empty-object-type': 'warn',
-      'unicorn/prefer-query-selector': 0,
-      'regexp/no-super-linear-backtracking': 0,
-      'regexp/no-useless-assertions': 0,
-      'unicorn/no-new-array': 0,
-      '@typescript-eslint/method-signature-style': 0,
-      'unicorn/prefer-code-point': 'warn',
-      'unicorn/no-object-as-default-parameter': 'warn',
-      'unused-imports/no-unused-vars': 'warn',
-      '@eslint-react/no-unstable-default-props': 'warn',
-      'unicorn/prefer-regexp-test': 'warn',
-      'no-unsafe-optional-chaining': 'warn',
-      'unicorn/prefer-logical-operator-over-ternary': 'warn',
-      'arrow-body-style': 0,
-      'unicorn/no-array-callback-reference': 0,
-      'prefer-regex-literals': 0,
-      'regexp/optimal-quantifier-concatenation': 'warn',
-      'unicorn/prefer-string-slice': 0,
-      'array-callback-return': 0,
-      'regexp/no-unused-capturing-group': 1,
-      'unicorn/no-anonymous-default-export': 0,
-      'unicorn/no-magic-array-flat-depth': 1,
-      'react-refresh/only-export-components': 'error',
+      'unicorn/prefer-math-trunc': 'off',
+      '@eslint-react/no-clone-element': 0,
+      '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 0,
+      // NOTE: Disable this temporarily
+      'react-compiler/react-compiler': 0,
+      'no-restricted-syntax': 0,
+      'no-restricted-globals': [
+        'error',
+        {
+          name: 'location',
+          message:
+            "Since you don't use the same router instance in electron and browser, you can't use the global location to get the route info. \n\n" +
+            'You can use `useLocaltion` or `getReadonlyRoute` to get the route info.',
+        },
+      ],
     },
   },
-
   {
-    files: ['**/*/package.json', 'package.json'],
+    files: ['**/*.tsx'],
     rules: {
-      'package-json/valid-package-def': 0,
-      'package-json/valid-name': 0,
+      '@stylistic/jsx-self-closing-comp': 'error',
+    },
+  },
+  {
+    files: ['locales/**/*.json'],
+    plugins: {
+      'recursive-sort': recursiveSort,
+    },
+    rules: {
+      'recursive-sort/recursive-sort': 'error',
     },
   },
 )

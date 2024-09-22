@@ -1,4 +1,4 @@
-import { clsxm } from '~/utils/cn'
+import { clsxm } from '~/lib/cn'
 
 interface LoadingCircleProps {
   size: 'small' | 'medium' | 'large'

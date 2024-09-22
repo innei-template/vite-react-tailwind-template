@@ -2,7 +2,7 @@ import { repository } from '@pkg'
 import { useEffect, useRef } from 'react'
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom'
 
-import { attachOpenInEditor } from '~/utils/dev'
+import { attachOpenInEditor } from '~/lib/dev'
 
 import { StyledButton } from '../ui'
 

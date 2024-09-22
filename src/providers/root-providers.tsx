@@ -4,9 +4,10 @@ import { Provider } from 'jotai'
 import type { FC, PropsWithChildren } from 'react'
 
 import { Toaster } from '~/components/ui/sonner'
-import { jotaiStore } from '~/utils/jotai'
-import { queryClient } from '~/utils/query-client'
+import { jotaiStore } from '~/lib/jotai'
+import { queryClient } from '~/lib/query-client'
 
+import { SettingSync } from './setting-sync'
 import { StableRouterProvider } from './stable-router-provider'
 
 const loadFeatures = () =>
@@ -23,6 +24,7 @@ export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
       <QueryClientProvider client={queryClient}>
         <Provider store={jotaiStore}>
           <StableRouterProvider />
+          <SettingSync />
           {children}
         </Provider>
       </QueryClientProvider>

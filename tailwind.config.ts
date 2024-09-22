@@ -4,13 +4,40 @@ import daisyui from 'daisyui'
 import { withTV } from 'tailwind-variants/transformer'
 import type { Config } from 'tailwindcss'
 
-require('./cssAsPlugin')
+require('./plugins/css-plugin')
 
 const twConfig: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: ['class', '[data-theme="dark"]'],
   safelist: [],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    cursor: {
+      button: 'var(--cursor-button)',
+      select: 'var(--cursor-select)',
+      checkbox: 'var(--cursor-checkbox)',
+      link: 'var(--cursor-link)',
+      menu: 'var(--cursor-menu)',
+      radio: 'var(--cursor-radio)',
+      switch: 'var(--cursor-switch)',
+      card: 'var(--cursor-card)',
+    },
+
+    colors: {
+      border: 'hsl(var(--border) / <alpha-value>)',
+    },
+    borderRadius: {
+      lg: 'var(--radius)',
+      md: 'calc(var(--radius) - 2px)',
+      sm: 'calc(var(--radius) - 4px)',
+    },
+
     extend: {
       fontFamily: {
         sans: 'system-ui,-apple-system,PingFang SC,"Microsoft YaHei",Segoe UI,Roboto,Helvetica,noto sans sc,hiragino sans gb,"sans-serif",Apple Color Emoji,Segoe UI Emoji,Not Color Emoji',
@@ -36,12 +63,6 @@ const twConfig: Config = {
       },
       maxHeight: {
         screen: '100vh',
-      },
-
-      colors: {
-        themed: {
-          bg_opacity: 'var(--bg-opacity)',
-        },
       },
     },
   },
