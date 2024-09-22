@@ -19,27 +19,28 @@ const twConfig: Config = {
         '2xl': '1400px',
       },
     },
-    cursor: {
-      button: 'var(--cursor-button)',
-      select: 'var(--cursor-select)',
-      checkbox: 'var(--cursor-checkbox)',
-      link: 'var(--cursor-link)',
-      menu: 'var(--cursor-menu)',
-      radio: 'var(--cursor-radio)',
-      switch: 'var(--cursor-switch)',
-      card: 'var(--cursor-card)',
-    },
-
-    colors: {
-      border: 'hsl(var(--border) / <alpha-value>)',
-    },
-    borderRadius: {
-      lg: 'var(--radius)',
-      md: 'calc(var(--radius) - 2px)',
-      sm: 'calc(var(--radius) - 4px)',
-    },
 
     extend: {
+      cursor: {
+        button: 'var(--cursor-button)',
+        select: 'var(--cursor-select)',
+        checkbox: 'var(--cursor-checkbox)',
+        link: 'var(--cursor-link)',
+        menu: 'var(--cursor-menu)',
+        radio: 'var(--cursor-radio)',
+        switch: 'var(--cursor-switch)',
+        card: 'var(--cursor-card)',
+      },
+
+      colors: {
+        border: 'hsl(var(--border) / <alpha-value>)',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+
       fontFamily: {
         sans: ['Geist Sans', ...defaultTheme.fontFamily.sans],
 

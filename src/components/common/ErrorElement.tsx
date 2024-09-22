@@ -4,7 +4,7 @@ import { isRouteErrorResponse, useRouteError } from 'react-router-dom'
 
 import { attachOpenInEditor } from '~/lib/dev'
 
-import { StyledButton } from '../ui'
+import { Button } from '../ui/button'
 
 export function ErrorElement() {
   const error = useRouteError()
@@ -53,15 +53,13 @@ export function ErrorElement() {
       </p>
 
       <div className="center gap-4">
-        <StyledButton onClick={() => (window.location.href = '/')}>
-          Reload
-        </StyledButton>
+        <Button onClick={() => (window.location.href = '/')}>Reload</Button>
       </div>
 
       <p className="mt-8">
         Still having this issue? Please give feedback in Github, thanks!
         <a
-          className="text-theme-accent-500 hover:text-theme-accent ml-2 cursor-pointer duration-200"
+          className="ml-2 cursor-pointer text-accent duration-200"
           href={`${repository.url}/issues/new?title=${encodeURIComponent(
             `Error: ${message}`,
           )}&body=${encodeURIComponent(
