@@ -69,6 +69,13 @@ a {
   }
 }
 
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../assets/fonts/GeistVF.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
 @layer base {
   * {
     @apply border-border;

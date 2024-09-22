@@ -3,6 +3,7 @@ import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import { withTV } from 'tailwind-variants/transformer'
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 require('./plugins/css-plugin')
 
@@ -40,7 +41,8 @@ const twConfig: Config = {
 
     extend: {
       fontFamily: {
-        sans: 'system-ui,-apple-system,PingFang SC,"Microsoft YaHei",Segoe UI,Roboto,Helvetica,noto sans sc,hiragino sans gb,"sans-serif",Apple Color Emoji,Segoe UI Emoji,Not Color Emoji',
+        sans: ['Geist Sans', ...defaultTheme.fontFamily.sans],
+
         serif:
           '"Noto Serif CJK SC","Noto Serif SC",var(--font-serif),"Source Han Serif SC","Source Han Serif",source-han-serif-sc,SongTi SC,SimSum,"Hiragino Sans GB",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif',
         mono: `"OperatorMonoSSmLig Nerd Font","Cascadia Code PL","FantasqueSansMono Nerd Font","operator mono",JetBrainsMono,"Fira code Retina","Fira code","Consolas", Monaco, "Hannotate SC", monospace, -apple-system`,
