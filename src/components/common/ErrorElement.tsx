@@ -32,7 +32,7 @@ export function ErrorElement() {
   }
 
   return (
-    <div className="m-auto flex min-h-full max-w-prose select-text flex-col p-8 pt-12">
+    <div className="flex m-auto min-h-full max-w-prose select-text flex-col p-8 pt-12">
       <div className="fixed inset-x-0 top-0 h-12" />
       <div className="center flex flex-col">
         <i className="i-mingcute-bug-fill size-12 text-red-400" />
