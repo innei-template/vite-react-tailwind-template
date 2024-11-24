@@ -1,7 +1,7 @@
 import { atom, useAtomValue } from 'jotai'
 import { selectAtom } from 'jotai/utils'
 import { useMemo } from 'react'
-import type { Location, NavigateFunction, Params } from 'react-router-dom'
+import type { Location, NavigateFunction, Params } from 'react-router'
 
 import { createAtomHooks } from '~/lib/jotai'
 

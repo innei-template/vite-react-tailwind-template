@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 
 import { RootProviders } from './providers/root-providers'
 
