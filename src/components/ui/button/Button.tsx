@@ -1,7 +1,6 @@
 // Tremor Button [v0.2.0]
 
 import { Slot } from '@radix-ui/react-slot'
-import { RiLoader2Fill } from '@remixicon/react'
 import { m } from 'motion/react'
 import * as React from 'react'
 import type { VariantProps } from 'tailwind-variants'

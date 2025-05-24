@@ -5,7 +5,6 @@ import { useMediaQuery } from 'usehooks-ts'
 
 import { nextFrame } from '~/lib/dom'
 import { jotaiStore } from '~/lib/jotai'
-import { getStorageNS } from '~/lib/ns'
 
 const useDarkQuery = () => useMediaQuery('(prefers-color-scheme: dark)')
 type ColorMode = 'light' | 'dark' | 'system'

@@ -1,14 +1,13 @@
 // @ts-check
 import { defineConfig } from 'eslint-config-hyoban'
 
-import recursiveSort from './plugins/eslint-recursive-sort.js'
-
 export default defineConfig(
   {
     formatting: false,
     lessOpinionated: true,
     preferESM: false,
     react: true,
+    tailwindCSS: false,
   },
   {
     settings: {

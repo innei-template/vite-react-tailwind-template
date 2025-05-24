@@ -32,7 +32,7 @@ export function ErrorElement() {
   }
 
   return (
-    <div className="m-auto flex min-h-full max-w-prose select-text flex-col p-8 pt-12">
+    <div className="m-auto flex min-h-full max-w-prose flex-col p-8 pt-12 select-text">
       <div className="fixed inset-x-0 top-0 h-12" />
       <div className="center flex flex-col">
         <i className="i-mingcute-bug-fill size-12 text-red-400" />
@@ -42,7 +42,7 @@ export function ErrorElement() {
       </div>
       <h3 className="text-xl">{message}</h3>
       {import.meta.env.DEV && stack ? (
-        <div className="mt-4 cursor-text overflow-auto whitespace-pre rounded-md bg-red-50 p-4 text-left font-mono text-sm text-red-600">
+        <div className="mt-4 cursor-text overflow-auto rounded-md bg-red-50 p-4 text-left font-mono text-sm whitespace-pre text-red-600">
           {attachOpenInEditor(stack)}
         </div>
       ) : null}

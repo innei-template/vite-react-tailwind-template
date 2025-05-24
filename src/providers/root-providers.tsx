@@ -1,6 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query'
-import { LazyMotion, MotionConfig } from 'motion/react'
 import { Provider } from 'jotai'
+import { LazyMotion, MotionConfig } from 'motion/react'
 import type { FC, PropsWithChildren } from 'react'
 
 import { Toaster } from '~/components/ui/sonner'

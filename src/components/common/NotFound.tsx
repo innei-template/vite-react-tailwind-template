@@ -7,7 +7,7 @@ export const NotFound = () => {
 
   const navigate = useNavigate()
   return (
-    <div className="prose center m-auto size-full flex-col dark:prose-invert">
+    <div className="prose center dark:prose-invert m-auto size-full flex-col">
       <main className="flex grow flex-col items-center justify-center">
         <p className="font-semibold">
           You have come to a desert of knowledge where there is nothing.
