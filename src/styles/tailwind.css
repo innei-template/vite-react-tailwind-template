@@ -1,6 +1,127 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin '@egoist/tailwindcss-icons';
+@plugin 'daisyui';
+@plugin "tailwind-scrollbar";
+@plugin 'tailwindcss-animated';
+
+@plugin "daisyui/theme" {
+  name: 'light';
+  default: true;
+  color-scheme: light;
+  --color-primary: #33a6b8;
+  --color-secondary: #a8d8b9;
+  --color-accent: #33a6b8;
+  --color-accent-content: #fafafa;
+  --color-neutral: #c7c7cc;
+  --color-base-100: #fff;
+  --color-base-content: #000;
+  --color-info: #007aff;
+  --color-success: #34c759;
+  --color-warning: #ff9500;
+  --color-error: #ff3b30;
+  --rounded-btn: 1.9rem;
+  --tab-border: 2px;
+  --tab-radius: 0.5rem;
+}
+
+@plugin "daisyui/theme" {
+  name: 'dark';
+  prefersdark: true;
+  color-scheme: dark;
+  --color-primary: #f596aa;
+  --color-secondary: #fb966e;
+  --color-accent: #f596aa;
+  --color-neutral: #48484a;
+  --color-base-100: #1c1c1e;
+  --color-base-content: #fff;
+  --color-info: #0a84ff;
+  --color-success: #30d158;
+  --color-warning: #ff9f0a;
+  --color-error: #ff453a;
+  --rounded-btn: 1.9rem;
+  --tab-border: 2px;
+  --tab-radius: 0.5rem;
+}
+
+@source "./src/**/*.{js,jsx,ts,tsx}";
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+[data-theme='light'] {
+  --radius: 0.5rem;
+  --border: 20 5.9% 90%;
+}
+
+[data-theme='dark'] {
+  --radius: 0.5rem;
+  --border: 0 0% 22.1%;
+}
+
+/* Theme configuration */
+@theme {
+  /* Container */
+  --container-padding: 2rem;
+  --container-max-width-2xl: 1400px;
+
+  /* Custom cursors */
+  --cursor-button: var(--cursor-button);
+  --cursor-select: var(--cursor-select);
+  --cursor-checkbox: var(--cursor-checkbox);
+  --cursor-link: var(--cursor-link);
+  --cursor-menu: var(--cursor-menu);
+  --cursor-radio: var(--cursor-radio);
+  --cursor-switch: var(--cursor-switch);
+  --cursor-card: var(--cursor-card);
+
+  /* Colors */
+  --color-border: hsl(var(--border));
+
+  /* Border radius */
+  --radius: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Font families */
+  --font-family-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-family-serif:
+    'Noto Serif CJK SC', 'Noto Serif SC', var(--font-serif),
+    'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, SongTi SC,
+    SimSum, 'Hiragino Sans GB', system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  --font-family-mono:
+    'OperatorMonoSSmLig Nerd Font', 'Cascadia Code PL',
+    'FantasqueSansMono Nerd Font', 'operator mono', JetBrainsMono,
+    'Fira code Retina', 'Fira code', Consolas, Monaco, 'Hannotate SC',
+    monospace, -apple-system;
+
+  /* Custom screens */
+  --screen-light-mode: (prefers-color-scheme: light);
+  --screen-dark-mode: (prefers-color-scheme: dark);
+  --screen-w-screen: 100vw;
+  --screen-h-screen: 100vh;
+
+  /* Width and max-width */
+  --width-screen: 100vw;
+  --max-width-screen: 100vw;
+
+  /* Height and max-height */
+  --height-screen: 100vh;
+  --max-height-screen: 100vh;
+}
+
+@layer base {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--container-padding);
+  }
+  @media (min-width: 1536px) {
+    .container {
+      max-width: var(--container-max-width-2xl);
+    }
+  }
+}
 
 html {
   @apply font-sans;
@@ -10,62 +131,20 @@ html body {
   @apply max-w-screen overflow-x-hidden;
 }
 
-/* @media (min-width: 2160px) {
-  html {
-    font-size: 15px;
-  }
-} */
-
 *:focus {
   outline: none;
 }
 
 *:not(input):not(textarea):not([contenteditable='true']):focus-visible {
   outline: 0 !important;
-  box-shadow: theme(colors.accent) 0px 0px 0px 1px;
 }
+
 * {
   tab-size: 2;
+  @apply border-border;
 
   &:hover {
     scrollbar-color: auto;
-  }
-}
-
-/* input,
-textarea {
-  font-size: max(16px, 1rem);
-} */
-
-a {
-  @apply break-all;
-}
-
-@screen lg {
-  input,
-  textarea {
-    font-size: 1rem;
-  }
-}
-
-.prose p:last-child {
-  margin-bottom: 0;
-}
-
-.prose
-  :where(blockquote):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-  @apply relative border-0;
-
-  &::before {
-    content: '';
-    display: block;
-    width: 3px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 1em;
-    background-color: theme(colors.accent);
   }
 }
 
@@ -76,13 +155,8 @@ a {
   font-weight: 100 900;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    font-feature-settings:
-      'rlig' 1,
-      'calt' 1;
-  }
+body {
+  font-feature-settings:
+    'rlig' 1,
+    'calt' 1;
 }

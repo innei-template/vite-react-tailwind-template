@@ -7,13 +7,8 @@ export default defineConfig(
   {
     formatting: false,
     lessOpinionated: true,
-    ignores: [
-      'src/renderer/src/hono.ts',
-      'src/hono.ts',
-      'packages/shared/src/hono.ts',
-      'resources/**',
-    ],
     preferESM: false,
+    react: true,
   },
   {
     settings: {
@@ -43,15 +38,6 @@ export default defineConfig(
     files: ['**/*.tsx'],
     rules: {
       '@stylistic/jsx-self-closing-comp': 'error',
-    },
-  },
-  {
-    files: ['locales/**/*.json'],
-    plugins: {
-      'recursive-sort': recursiveSort,
-    },
-    rules: {
-      'recursive-sort/recursive-sort': 'error',
     },
   },
 )

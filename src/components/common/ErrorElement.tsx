@@ -32,7 +32,7 @@ export function ErrorElement() {
   }
 
   return (
-    <div className="flex m-auto min-h-full max-w-prose select-text flex-col p-8 pt-12">
+    <div className="m-auto flex min-h-full max-w-prose select-text flex-col p-8 pt-12">
       <div className="fixed inset-x-0 top-0 h-12" />
       <div className="center flex flex-col">
         <i className="i-mingcute-bug-fill size-12 text-red-400" />
@@ -59,7 +59,7 @@ export function ErrorElement() {
       <p className="mt-8">
         Still having this issue? Please give feedback in Github, thanks!
         <a
-          className="ml-2 cursor-pointer text-accent duration-200"
+          className="text-accent ml-2 cursor-pointer duration-200"
           href={`${repository.url}/issues/new?title=${encodeURIComponent(
             `Error: ${message}`,
           )}&body=${encodeURIComponent(

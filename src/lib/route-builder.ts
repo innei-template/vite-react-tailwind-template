@@ -1,4 +1,4 @@
-import { get, omit } from 'lodash-es'
+import { get, omit } from 'es-toolkit/compat'
 import { Fragment } from 'react/jsx-runtime'
 import type { RouteObject } from 'react-router'
 
@@ -128,7 +128,7 @@ export function buildGlobRoutes(
         dtsRoutes(
           parentKey,
           childrenChildren,
-          omit(paths, 'layout'),
+          omit(paths, 'layout') as NestedStructure,
           parentPath,
         )
         children.push({

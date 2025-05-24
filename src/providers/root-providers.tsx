@@ -1,5 +1,5 @@
 import { QueryClientProvider } from '@tanstack/react-query'
-import { LazyMotion, MotionConfig } from 'framer-motion'
+import { LazyMotion, MotionConfig } from 'motion/react'
 import { Provider } from 'jotai'
 import type { FC, PropsWithChildren } from 'react'
 

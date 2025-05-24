@@ -1,4 +1,6 @@
+import tailwindcss from '@tailwindcss/vite'
 import reactRefresh from '@vitejs/plugin-react'
+import { codeInspectorPlugin } from 'code-inspector-plugin'
 import { defineConfig } from 'vite'
 import { checker } from 'vite-plugin-checker'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -14,6 +16,11 @@ export default defineConfig({
       typescript: true,
       enableBuild: true,
     }),
+    codeInspectorPlugin({
+      bundler: 'vite',
+      hotKeys: ['altKey'],
+    }),
+    tailwindcss(),
   ],
   define: {
     APP_DEV_CWD: JSON.stringify(process.cwd()),
