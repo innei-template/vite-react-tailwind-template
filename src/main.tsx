@@ -8,6 +8,10 @@ import { router } from './router'
 
 const $container = document.querySelector('#root') as HTMLElement
 
+if (import.meta.env.DEV) {
+  const { start } = await import('react-scan')
+  start()
+}
 createRoot($container).render(
   <React.StrictMode>
     <RouterProvider router={router} />

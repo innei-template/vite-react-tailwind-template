@@ -19,6 +19,7 @@ import {
 import { useState } from 'react'
 
 import { Button } from '~/components/ui/button/Button'
+import { Checkbox } from '~/components/ui/checkbox/Checkbox'
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -28,6 +29,16 @@ import {
   ContextMenuSeparator,
   ContextMenuTrigger,
 } from '~/components/ui/context-menu/context-menu'
+import { Divider } from '~/components/ui/divider/Divider'
+import { Input } from '~/components/ui/input/Input'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '~/components/ui/select/Select'
+import { Slider } from '~/components/ui/slider/Slider'
 import {
   Tooltip,
   TooltipContent,
@@ -341,6 +352,108 @@ export const Component = () => {
                     >
                       <Github className="w-4 h-4" />
                     </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Form Components */}
+              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+                <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">
+                  Form Components
+                </h3>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Input Examples */}
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Input Fields
+                    </h4>
+                    <Input placeholder="Default input" />
+                    <Input type="search" placeholder="Search input" />
+                    <Input type="password" placeholder="Password input" />
+                    <Input placeholder="Disabled input" disabled />
+                  </div>
+
+                  {/* Select Examples */}
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Select Dropdown
+                    </h4>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select an option" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="option1">Option 1</SelectItem>
+                        <SelectItem value="option2">Option 2</SelectItem>
+                        <SelectItem value="option3">Option 3</SelectItem>
+                        <SelectItem value="option4" disabled>
+                          Option 4 (Disabled)
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <Divider className="my-8" />
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Checkbox Examples */}
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Checkboxes
+                    </h4>
+                    <div className="space-y-3">
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <Checkbox defaultChecked />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Checked by default
+                        </span>
+                      </label>
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <Checkbox />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Unchecked option
+                        </span>
+                      </label>
+                      <label className="flex items-center gap-3 cursor-not-allowed opacity-50">
+                        <Checkbox disabled />
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Disabled checkbox
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Slider Examples */}
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Sliders
+                    </h4>
+                    <div className="space-y-6">
+                      <div>
+                        <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          Primary Slider
+                        </label>
+                        <Slider
+                          defaultValue={[50]}
+                          max={100}
+                          step={1}
+                          variant="primary"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          Secondary Slider
+                        </label>
+                        <Slider
+                          defaultValue={[25]}
+                          max={100}
+                          step={1}
+                          variant="secondary"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
