@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.11.1",
   "repository": {
     "type": "git",
-    "url": "https://"
+    "url": "https://github.com/innei-template/vite-react-tailwind-template"
   },
   "scripts": {
     "build": "tsc && vite build",

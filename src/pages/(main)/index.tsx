@@ -46,6 +46,8 @@ import {
 } from '~/components/ui/tooltip/Tooltip'
 import { useSetTheme, useThemeAtomValue } from '~/hooks/common/useDark'
 
+import { repository } from '../../../package.json'
+
 export const Component = () => {
   const [starCount, setStarCount] = useState(42)
   const [isStarred, setIsStarred] = useState(false)
@@ -184,7 +186,7 @@ export const Component = () => {
               <Button
                 variant="ghost"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 px-8 py-3 h-auto text-base font-medium"
-                onClick={() => window.open('https://github.com', '_blank')}
+                onClick={() => window.open(repository.url, '_blank')}
               >
                 <Github className="w-4 h-4 mr-2" />
                 View on GitHub
@@ -584,25 +586,6 @@ export const Component = () => {
           </div>
         </section>
       </div>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 mt-24">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <div className="w-6 h-6 bg-black dark:bg-white rounded-sm flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white dark:text-black" />
-              </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                Vite React Template
-              </span>
-            </div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">
-              Built with modern tools for modern developers
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

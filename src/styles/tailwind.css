@@ -18,9 +18,9 @@
   --accent-foreground: #f5f5f7;
   --background: #f5f5f7;
   --foreground: #1c1c1e;
-  --background-secondary: #f2f2f7;
-  --background-tertiary: #e5e5ea;
-  --background-quaternary: #d1d1d6;
+  --background-secondary: #efefef;
+  --background-tertiary: #e8e8e8;
+  --background-quaternary: #e0e0e0;
 }
 
 [data-theme='dark'] {
@@ -30,9 +30,9 @@
   --accent-foreground: #f5f5f7;
   --background: #100d08;
   --foreground: #f5f5f7;
-  --background-secondary: #2c2c2e;
-  --background-tertiary: #3c3c43;
-  --background-quaternary: #48484a;
+  --background-secondary: #1a1610;
+  --background-tertiary: #242018;
+  --background-quaternary: #2e2920;
 }
 
 [data-hand-cursor='true'] {
@@ -68,6 +68,9 @@ body {
 
 /* Theme configuration */
 @theme {
+  --font-sans:
+    'Geist Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   /* Container */
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
@@ -184,7 +187,7 @@ html body {
   font-family: 'Geist Sans';
   src: url('../assets/fonts/GeistVF.woff2') format('woff2');
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 100 200 300 400 500 600 700 800 900;
 }
 
 body {
