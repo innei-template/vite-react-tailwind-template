@@ -1,48 +1,11 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin '@egoist/tailwindcss-icons';
-@plugin 'daisyui';
 @plugin "tailwind-scrollbar";
-@plugin 'tailwindcss-animated';
+@plugin 'tailwindcss-animate';
+@plugin 'tailwindcss-safe-area';
 
-@plugin "daisyui/theme" {
-  name: 'light';
-  default: true;
-  color-scheme: light;
-  --color-primary: #33a6b8;
-  --color-secondary: #a8d8b9;
-  --color-accent: #33a6b8;
-  --color-accent-content: #fafafa;
-  --color-neutral: #c7c7cc;
-  --color-base-100: #fff;
-  --color-base-content: #000;
-  --color-info: #007aff;
-  --color-success: #34c759;
-  --color-warning: #ff9500;
-  --color-error: #ff3b30;
-  --rounded-btn: 1.9rem;
-  --tab-border: 2px;
-  --tab-radius: 0.5rem;
-}
-
-@plugin "daisyui/theme" {
-  name: 'dark';
-  prefersdark: true;
-  color-scheme: dark;
-  --color-primary: #f596aa;
-  --color-secondary: #fb966e;
-  --color-accent: #f596aa;
-  --color-neutral: #48484a;
-  --color-base-100: #1c1c1e;
-  --color-base-content: #fff;
-  --color-info: #0a84ff;
-  --color-success: #30d158;
-  --color-warning: #ff9f0a;
-  --color-error: #ff453a;
-  --rounded-btn: 1.9rem;
-  --tab-border: 2px;
-  --tab-radius: 0.5rem;
-}
+@import 'tailwindcss-uikit-colors/v4/macos.css';
 
 @source "./src/**/*.{js,jsx,ts,tsx}";
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
@@ -50,11 +13,55 @@
 [data-theme='light'] {
   --radius: 0.5rem;
   --border: 20 5.9% 90%;
+
+  --accent: #1e90ff;
+  --background: #f5f5f7;
+  --foreground: #1c1c1e;
+  --background-secondary: #f2f2f7;
+  --background-tertiary: #e5e5ea;
+  --background-quaternary: #d1d1d6;
 }
 
 [data-theme='dark'] {
   --radius: 0.5rem;
   --border: 0 0% 22.1%;
+  --accent: #0f52ba;
+  --background: #100d08;
+  --foreground: #f5f5f7;
+  --background-secondary: #2c2c2e;
+  --background-tertiary: #3c3c43;
+  --background-quaternary: #48484a;
+}
+
+[data-hand-cursor='true'] {
+  --cursor-button: pointer;
+  --cursor-select: text;
+  --cursor-checkbox: pointer;
+  --cursor-link: pointer;
+  --cursor-menu: pointer;
+  --cursor-radio: pointer;
+  --cursor-switch: pointer;
+  --cursor-card: pointer;
+}
+
+:root {
+  --cursor-button: default;
+  --cursor-select: text;
+  --cursor-checkbox: default;
+  --cursor-link: pointer;
+  --cursor-menu: default;
+  --cursor-radio: default;
+  --cursor-switch: default;
+  --cursor-card: default;
+}
+
+:root,
+body {
+  @apply bg-background text-foreground;
+  @apply font-sans;
+  @apply text-base leading-normal;
+  @apply antialiased;
+  @apply selection:bg-accent selection:text-white;
 }
 
 /* Theme configuration */
@@ -75,12 +82,49 @@
 
   /* Colors */
   --color-border: hsl(var(--border));
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
+  --color-background-quaternary: var(--background-quaternary);
 
-  /* Border radius */
-  --radius: var(--radius);
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  /* Blur */
+  --blur-background: 70px;
+
+  /* Shadow */
+  --shadow-context-menu: '0px 0px 1px rgba(0, 0, 0, 0.4), 0px 0px 1.5px rgba(0, 0, 0, 0.3), 0px 7px 22px rgba(0, 0, 0, 0.25)';
+
+  /* Font */
+  --text-large-title: 1.625rem;
+  --text-large-title--line-height: 2rem;
+
+  --text-title1: 1.375rem;
+  --text-title1--line-height: 1.625rem;
+
+  --text-title2: 1.0625rem;
+  --text-title2--line-height: 1.375rem;
+
+  --text-title3: 0.9375rem;
+  --text-title3--line-height: 1.25rem;
+
+  --text-headline: 0.8125rem;
+  --text-headline--line-height: 1rem;
+
+  --text-body: 0.8125rem;
+  --text-body--line-height: 1rem;
+
+  --text-callout: 0.75rem;
+  --text-callout--line-height: 0.9375rem;
+
+  --text-subheadline: 0.6875rem;
+  --text-subheadline--line-height: 0.875rem;
+
+  --text-footnote: 0.625rem;
+  --text-footnote--line-height: 0.8125rem;
+
+  --text-caption: 0.625rem;
+  --text-caption--line-height: 0.8125rem;
 
   /* Font families */
   --font-family-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
@@ -98,8 +142,6 @@
   /* Custom screens */
   --screen-light-mode: (prefers-color-scheme: light);
   --screen-dark-mode: (prefers-color-scheme: dark);
-  --screen-w-screen: 100vw;
-  --screen-h-screen: 100vh;
 
   /* Width and max-width */
   --width-screen: 100vw;
@@ -131,21 +173,8 @@ html body {
   @apply max-w-screen overflow-x-hidden;
 }
 
-*:focus {
-  outline: none;
-}
-
 *:not(input):not(textarea):not([contenteditable='true']):focus-visible {
   outline: 0 !important;
-}
-
-* {
-  tab-size: 2;
-  @apply border-border;
-
-  &:hover {
-    scrollbar-color: auto;
-  }
 }
 
 @font-face {

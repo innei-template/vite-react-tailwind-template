@@ -1,7 +1,6 @@
 // Tremor Button [v0.2.0]
 
 import { Slot } from '@radix-ui/react-slot'
-import { m } from 'motion/react'
 import * as React from 'react'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
@@ -10,70 +9,95 @@ import { cx, focusRing } from '~/lib/cn'
 
 const buttonVariants = tv({
   base: [
-    'relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-center font-medium transition-all duration-100 ease-in-out',
-    'disabled:pointer-events-none',
+    // base - 调整圆角和间距
+    'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-4 py-2 text-center text-sm font-medium shadow-sm transition-all duration-200 ease-out',
+    // disabled
+    'disabled:pointer-events-none disabled:shadow-none disabled:opacity-60',
+    // focus
     focusRing,
   ],
   variants: {
     variant: {
       primary: [
-        'border-transparent',
-        'text-white dark:text-white',
-        'bg-accent dark:bg-accent',
-        'hover:bg-accent/90 dark:hover:bg-accent/90',
-        'disabled:bg-accent/50 disabled:text-white/70',
-        'disabled:dark:bg-accent/30 disabled:dark:text-white/50',
+        // border
+        '!border-transparent',
+        // text color
+        'text-foreground',
+
+        'bg-accent',
+
+        // active state
+        'active:scale-[0.98]',
+        // disabled
+        'disabled:bg-blue-400 disabled:text-white',
+        'disabled:bg-control-disabled',
       ],
       secondary: [
-        'border border-gray-200 dark:border-gray-700',
-        'text-gray-700 dark:text-gray-200',
-        'bg-gray-50 dark:bg-gray-800',
-        'hover:bg-gray-100 dark:hover:bg-gray-750',
-        'disabled:bg-gray-50 disabled:text-gray-400',
-        'disabled:dark:bg-gray-800 disabled:dark:text-gray-500',
+        // border - 更细的边框
+        'border-gray-200 dark:border-gray-700',
+        // text color
+        'text-gray-900 dark:text-gray-100',
+        // background color - 更柔和的背景
+        'bg-white dark:bg-gray-900',
+        // hover color - 微妙的悬停效果
+        'hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm dark:hover:bg-gray-800 dark:hover:border-gray-600',
+        // active state
+        'active:bg-gray-100 active:scale-[0.98] dark:active:bg-gray-750',
+        // disabled
+        'disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-100',
+        'dark:disabled:bg-gray-800 dark:disabled:text-gray-500 dark:disabled:border-gray-700',
       ],
       light: [
+        // base
         'shadow-none',
+        // border
         'border-transparent',
-        'text-gray-900 dark:text-gray-50',
-        'bg-gray-200 dark:bg-gray-900',
-        'hover:bg-gray-300/70 dark:hover:bg-gray-800/80',
-        'disabled:bg-gray-100 disabled:text-gray-400',
-        'disabled:dark:bg-gray-800 disabled:dark:text-gray-600',
+        // text color
+        'text-gray-900 dark:text-gray-100',
+        // background color - 更柔和的灰色
+        'bg-gray-100 dark:bg-gray-800',
+        // hover color
+        'hover:bg-gray-150 hover:shadow-sm dark:hover:bg-gray-750',
+        // active state
+        'active:bg-gray-200 active:scale-[0.98] dark:active:bg-gray-700',
+        // disabled
+        'disabled:bg-gray-75 disabled:text-gray-400',
+        'dark:disabled:bg-gray-850 dark:disabled:text-gray-500',
       ],
       ghost: [
+        // base
         'shadow-none',
+        // border
         'border-transparent',
-        'text-gray-900 dark:text-gray-50',
-        'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800/80',
+        // text color
+        'text-gray-700 dark:text-gray-300',
+        // hover color - 非常微妙的悬停效果
+        'bg-transparent hover:bg-gray-100/80 hover:text-gray-900 dark:hover:bg-gray-800/60 dark:hover:text-gray-100',
+        // active state
+        'active:bg-gray-150 active:scale-[0.98] dark:active:bg-gray-750',
+        // disabled
         'disabled:text-gray-400',
-        'disabled:dark:text-gray-600',
+        'dark:disabled:text-gray-600',
       ],
       destructive: [
+        // text color
         'text-white',
+        // border
         'border-transparent',
-        'bg-red-600 dark:bg-red-700',
-        'hover:bg-red-700 dark:hover:bg-red-600',
+        // background color - Apple 风格的红色
+        'bg-red-500 dark:bg-red-600',
+        // hover color
+        'hover:bg-red-600 hover:shadow-md dark:hover:bg-red-700',
+        // active state
+        'active:bg-red-700 active:scale-[0.98] dark:active:bg-red-800',
+        // disabled
         'disabled:bg-red-300 disabled:text-white',
-        'disabled:dark:bg-red-950 disabled:dark:text-red-400',
+        'dark:disabled:bg-red-800 dark:disabled:text-red-200',
       ],
-    },
-    size: {
-      xs: 'h-6 px-2 text-xs',
-      sm: 'h-8 px-3 text-sm',
-      md: 'h-10 px-4 text-sm',
-      lg: 'h-11 px-8 text-base',
-      xl: 'h-12 px-8 text-base',
-    },
-    flat: {
-      true: 'shadow-none',
-      false: 'shadow-sm',
     },
   },
   defaultVariants: {
     variant: 'primary',
-    size: 'sm',
-    flat: false,
   },
 })
 
@@ -93,35 +117,26 @@ const Button = ({
   className,
   disabled,
   variant,
-  size,
-  flat,
   children,
   ...props
-}: ButtonProps & {
-  ref?: React.RefObject<HTMLButtonElement>
-}) => {
-  const Component = asChild ? Slot : m.button
+}: ButtonProps & { ref?: React.RefObject<HTMLButtonElement | null> }) => {
+  const Component = asChild ? Slot : 'button'
   return (
-    // @ts-expect-error
     <Component
       ref={forwardedRef}
-      className={cx(buttonVariants({ variant, size, flat }), className)}
+      className={cx(buttonVariants({ variant }), className)}
       disabled={disabled || isLoading}
-      data-tremor-id="tremor-raw"
-      whileTap={{ scale: 0.95 }}
+      tremor-id="tremor-raw"
       {...props}
     >
       {isLoading ? (
-        <span className="pointer-events-none inline-flex items-center justify-center gap-1.5">
+        <span className="pointer-events-none flex shrink-0 items-center justify-center gap-1.5">
           <i
-            className={cx(
-              'shrink-0 animate-spin i-mingcute-loading-3-line',
-              size === 'xs' || size === 'sm' ? 'size-3' : 'size-4',
-            )}
+            className="size-4 shrink-0 animate-spin i-mingcute-loading-3-line"
             aria-hidden="true"
           />
           <span className="sr-only">{loadingText ?? 'Loading'}</span>
-          <span className="inline-block">{loadingText ?? children}</span>
+          {loadingText ?? children}
         </span>
       ) : (
         children
@@ -132,4 +147,4 @@ const Button = ({
 
 Button.displayName = 'Button'
 
-export { Button, type ButtonProps, buttonVariants }
+export { Button, type ButtonProps }

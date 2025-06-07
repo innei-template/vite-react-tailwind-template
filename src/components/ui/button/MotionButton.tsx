@@ -1,15 +1,13 @@
 import type { HTMLMotionProps } from 'motion/react'
 import { m } from 'motion/react'
 
-export const MotionButtonBase = (
-  {
-    ref,
-    children,
-    ...rest
-  }: HTMLMotionProps<'button'> & {
-    ref: React.RefObject<HTMLButtonElement>;
-  }
-) => {
+export const MotionButtonBase = ({
+  ref,
+  children,
+  ...rest
+}: HTMLMotionProps<'button'> & {
+  ref?: React.Ref<HTMLButtonElement>
+}) => {
   return (
     <m.button
       initial={true}
