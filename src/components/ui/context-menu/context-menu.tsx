@@ -77,7 +77,7 @@ const ContextMenuContent = ({
     <ContextMenuPrimitive.Content
       ref={ref}
       className={clsxm(
-        'bg-material-medium backdrop-blur-[70px] text-text shadow-context-menu z-[10060] min-w-32 overflow-hidden rounded-[6px] border border-border p-1',
+        'bg-material-medium backdrop-blur-background text-text shadow-context-menu z-[10060] min-w-32 overflow-hidden rounded-[6px] border border-border p-1',
         'text-body',
         className,
       )}
@@ -100,8 +100,8 @@ const ContextMenuItem = ({
   <ContextMenuPrimitive.Item
     ref={ref}
     className={clsxm(
-      'cursor-menu focus:bg-accent text-sm text-foreground relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      'data-[highlighted]:bg-accent focus-within:outline-transparent',
+      'cursor-menu focus:bg-accent focus:text-accent-foreground text-sm text-foreground relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground focus-within:outline-transparent',
       'h-[28px]',
       inset && 'pl-8',
       className,

@@ -12,7 +12,7 @@ const buttonVariants = tv({
     // base - 调整圆角和间距
     'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-4 py-2 text-center text-sm font-medium shadow-sm transition-all duration-200 ease-out',
     // disabled
-    'disabled:pointer-events-none disabled:shadow-none disabled:opacity-60',
+    'disabled:pointer-events-none disabled:shadow-none disabled:bg-control-disabled disabled:text-text-secondary',
     // focus
     focusRing,
   ],
@@ -22,15 +22,10 @@ const buttonVariants = tv({
         // border
         '!border-transparent',
         // text color
-        'text-foreground',
-
+        'text-accent-foreground',
         'bg-accent',
-
         // active state
         'active:scale-[0.98]',
-        // disabled
-        'disabled:bg-blue-400 disabled:text-white',
-        'disabled:bg-control-disabled',
       ],
       secondary: [
         // border - 更细的边框
@@ -40,7 +35,7 @@ const buttonVariants = tv({
         // background color - 更柔和的背景
         'bg-white dark:bg-gray-900',
         // hover color - 微妙的悬停效果
-        'hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm dark:hover:bg-gray-800 dark:hover:border-gray-600',
+        'hover:bg-gray-50 hover:border-gray-300 shadow-none hover:shadow-sm dark:hover:bg-gray-800 dark:hover:border-gray-600',
         // active state
         'active:bg-gray-100 active:scale-[0.98] dark:active:bg-gray-750',
         // disabled
