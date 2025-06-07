@@ -20,8 +20,8 @@ const inputStyles = tv({
     // background color
     'bg-background',
     // disabled
-    'disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-400',
-    'dark:disabled:border-gray-700 dark:disabled:bg-gray-800 dark:disabled:text-gray-500',
+    'disabled:border-border disabled:bg-control-disabled disabled:text-text-secondary',
+
     // file
     [
       'file:-my-2 file:-ml-2.5 file:cursor-pointer file:rounded-l-[5px] file:rounded-r-none file:border-0 file:px-3 file:py-2 file:outline-hidden focus:outline-hidden disabled:pointer-events-none file:disabled:pointer-events-none',
