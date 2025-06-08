@@ -68,9 +68,6 @@ body {
 
 /* Theme configuration */
 @theme {
-  --font-sans:
-    'Geist Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   /* Container */
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
@@ -99,7 +96,9 @@ body {
   --blur-background: 70px;
 
   /* Shadow */
-  --shadow-context-menu: '0px 0px 1px rgba(0, 0, 0, 0.4), 0px 0px 1.5px rgba(0, 0, 0, 0.3), 0px 7px 22px rgba(0, 0, 0, 0.25)';
+  --shadow-context-menu:
+    0px 0px 1px rgba(0, 0, 0, 0.12), 0px 0px 1.5px rgba(0, 0, 0, 0.04),
+    0px 7px 22px rgba(0, 0, 0, 0.08);
 
   /* Font */
   --text-large-title: 1.625rem;
@@ -133,13 +132,13 @@ body {
   --text-caption--line-height: 0.8125rem;
 
   /* Font families */
-  --font-family-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-family-serif:
+  --font-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif:
     'Noto Serif CJK SC', 'Noto Serif SC', var(--font-serif),
     'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, SongTi SC,
     SimSum, 'Hiragino Sans GB', system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-  --font-family-mono:
+  --font-mono:
     'OperatorMonoSSmLig Nerd Font', 'Cascadia Code PL',
     'FantasqueSansMono Nerd Font', 'operator mono', JetBrainsMono,
     'Fira code Retina', 'Fira code', Consolas, Monaco, 'Hannotate SC',
