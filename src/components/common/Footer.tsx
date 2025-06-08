@@ -45,7 +45,7 @@ export const Footer = () => {
           </div>
 
           {/* 版权信息 */}
-          <div className="text-xs text-text-quaternary text-center">
+          <div className="text-xs text-text-tertiary text-center">
             © {new Date().getFullYear()} All rights reserved.
           </div>
         </div>
