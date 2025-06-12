@@ -35,7 +35,7 @@ export function buildGlobRoutes(
 
   const routeObject: RouteObject[] = []
 
-  function dtsRoutes(
+  function dfsRoutes(
     parentKey: string,
     children: RouteObject[],
     paths: NestedStructure,
@@ -99,7 +99,7 @@ export function buildGlobRoutes(
         // }
 
         const childrenChildren: RouteObject[] = []
-        dtsRoutes(
+        dfsRoutes(
           `${segmentPathKey}/`,
           childrenChildren,
           paths[key],
@@ -125,7 +125,7 @@ export function buildGlobRoutes(
 
         const childrenChildren: RouteObject[] = []
         // should omit layout, because layout is already handled
-        dtsRoutes(
+        dfsRoutes(
           parentKey,
           childrenChildren,
           omit(paths, 'layout') as NestedStructure,
@@ -169,7 +169,7 @@ export function buildGlobRoutes(
         } else {
           const childrenChildren: RouteObject[] = []
           const fullPath = `${parentPath}/${normalizeKey}`
-          dtsRoutes(
+          dfsRoutes(
             `${segmentPathKey}/`,
             childrenChildren,
             paths[key],
@@ -188,7 +188,7 @@ export function buildGlobRoutes(
     }
   }
 
-  dtsRoutes('./pages/', routeObject, paths)
+  dfsRoutes('./pages/', routeObject, paths)
   return routeObject
 }
 
