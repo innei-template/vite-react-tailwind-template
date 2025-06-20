@@ -3,17 +3,13 @@ import { createBrowserRouter } from 'react-router'
 import { App } from './App'
 import { ErrorElement } from './components/common/ErrorElement'
 import { NotFound } from './components/common/NotFound'
-import { buildGlobRoutes } from './lib/route-builder'
-
-const globTree = import.meta.glob('./pages/**/*.tsx')
-
-const tree = buildGlobRoutes(globTree)
+import { routes } from './generated-routes'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    children: tree,
+    children: routes,
     errorElement: <ErrorElement />,
   },
   {

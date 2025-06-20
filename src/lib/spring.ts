@@ -1,9 +1,9 @@
-import type { Spring } from 'motion/react'
+import type { Transition } from 'motion/react'
 
 /**
  * A smooth spring with a predefined duration and no bounce.
  */
-const smoothPreset: Spring = {
+const smoothPreset: Transition = {
   type: 'spring',
   duration: 0.4,
   bounce: 0,
@@ -12,7 +12,7 @@ const smoothPreset: Spring = {
 /**
  * A spring with a predefined duration and small amount of bounce that feels more snappy.
  */
-const snappyPreset: Spring = {
+const snappyPreset: Transition = {
   type: 'spring',
   duration: 0.4,
   bounce: 0.15,
@@ -21,7 +21,7 @@ const snappyPreset: Spring = {
 /**
  * A spring with a predefined duration and higher amount of bounce.
  */
-const bouncyPreset: Spring = {
+const bouncyPreset: Transition = {
   type: 'spring',
   duration: 0.4,
   bounce: 0.3,
@@ -40,7 +40,7 @@ class SpringStatic {
    * @param duration The perceptual duration, which defines the pace of the spring.
    * @param extraBounce How much additional bounce should be added to the base bounce of 0.
    */
-  smooth(duration = 0.4, extraBounce = 0): Spring {
+  smooth(duration = 0.4, extraBounce = 0): Transition {
     return {
       type: 'spring',
       duration,
@@ -51,7 +51,7 @@ class SpringStatic {
   /**
    * A spring with a predefined duration and small amount of bounce that feels more snappy.
    */
-  snappy(duration = 0.4, extraBounce = 0): Spring {
+  snappy(duration = 0.4, extraBounce = 0): Transition {
     return {
       type: 'spring',
       duration,
@@ -62,7 +62,7 @@ class SpringStatic {
   /**
    * A spring with a predefined duration and higher amount of bounce that can be tuned.
    */
-  bouncy(duration = 0.4, extraBounce = 0): Spring {
+  bouncy(duration = 0.4, extraBounce = 0): Transition {
     return {
       type: 'spring',
       duration,

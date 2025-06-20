@@ -23,7 +23,11 @@ function generateStars(count: number, starColor: string) {
   return shadows.join(', ')
 }
 
-const defaultTransition = { repeat: Infinity, duration: 50, ease: 'linear' }
+const defaultTransition: Transition = {
+  repeat: Infinity,
+  duration: 50,
+  ease: 'linear',
+}
 function StarLayer({
   count = 1000,
   size = 1,

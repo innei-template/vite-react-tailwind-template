@@ -1,3 +1,6 @@
+import { fileURLToPath, resolve } from 'node:url'
+
+import routeBuilder from '@follow-app/vite-plugin-route-builder'
 import tailwindcss from '@tailwindcss/vite'
 import reactRefresh from '@vitejs/plugin-react'
 import { codeInspectorPlugin } from 'code-inspector-plugin'
@@ -7,7 +10,8 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 import PKG from './package.json'
 
-// https://vitejs.dev/config/
+const ROOT = fileURLToPath(new URL('./', import.meta.url))
+
 export default defineConfig({
   plugins: [
     reactRefresh(),
@@ -21,6 +25,11 @@ export default defineConfig({
       hotKeys: ['altKey'],
     }),
     tailwindcss(),
+    routeBuilder({
+      pagePattern: `${resolve(ROOT, './src/pages')}/**/*.tsx`,
+      outputPath: `${resolve(ROOT, './src/generated-routes.ts')}`,
+      enableInDev: true,
+    }),
   ],
   define: {
     APP_DEV_CWD: JSON.stringify(process.cwd()),

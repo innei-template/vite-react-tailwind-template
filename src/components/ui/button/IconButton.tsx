@@ -1,6 +1,10 @@
 'use client'
 
-import type { HTMLMotionProps, Transition } from 'motion/react'
+import type {
+  HTMLMotionProps,
+  MotionProps,
+  Transition,
+} from 'motion/react'
 import { AnimatePresence, m } from 'motion/react'
 import * as React from 'react'
 
@@ -35,7 +39,7 @@ const animations = {
     },
     transition: { duration: 0.8, delay: index * 0.05, ease: 'easeOut' },
   }),
-}
+} satisfies Record<string, MotionProps | ((index: number) => MotionProps)>
 
 type IconButtonProps = Omit<HTMLMotionProps<'button'>, 'color'> & {
   icon: React.ElementType
