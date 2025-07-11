@@ -128,6 +128,16 @@ Opinionated configuration for:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 📚 Documentation
+
+Comprehensive guides and references are available in the `/docs` folder:
+
+- **[User Guide](./docs/USER_GUIDE.md)** - Quick start tutorial and practical examples
+- **[Development Guide](./docs/DEVELOPMENT.md)** - Complete development workflows
+- **[Architecture Documentation](./docs/ARCHITECTURE.md)** - System design and patterns
+- **[API Reference](./docs/API.md)** - Component and hook documentation
+- **[llms.txt](./llms.txt)** - AI/LLM-friendly project overview
+
 ## 📄 License
 
 This template is open source and available under the [MIT License](LICENSE).

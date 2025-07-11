@@ -1,0 +1,205 @@
+# Vite React TailwindCSS Template
+
+> A modern, production-ready React template built with Vite, TypeScript, TailwindCSS, and contemporary development tools for building scalable applications.
+
+This template provides a comprehensive foundation for React applications with excellent developer experience, type safety, and performance. It combines React 19, Vite 7, TypeScript 5.8, and TailwindCSS 4 with atomic state management (Jotai), server state (React Query), and file-based routing.
+
+## Key Technologies
+
+- **React 19**: Latest React with concurrent features and improved hydration
+- **TypeScript 5.8**: Full type safety with strict configuration  
+- **Vite 7**: Ultra-fast development server and optimized builds
+- **TailwindCSS 4**: Utility-first CSS with Apple UIKit color system
+- **Jotai**: Atomic state management with minimal boilerplate
+- **React Query**: Server state, caching, and synchronization
+- **Radix UI**: Accessible primitives for complex components
+- **Framer Motion**: Declarative animations with performance optimization
+
+## Project Structure
+
+```
+src/
+├── components/ui/       # Base UI primitives (Button, Input, Select, etc.)
+├── components/common/   # App-specific shared components
+├── pages/              # File-based routing
+├── hooks/common/       # Custom React hooks (useDark, useViewport, etc.)
+├── atoms/              # Jotai state atoms
+├── providers/          # React Context providers
+├── lib/                # Utilities and configurations
+└── styles/             # Global CSS and Tailwind config
+```
+
+## Component Architecture
+
+### UI Components
+- **Button**: Multiple variants (primary, secondary, ghost, destructive) with loading states
+- **Input**: Special types (password with toggle, search with icon, number with steppers)
+- **Select**: Compound component with trigger, content, items using Radix UI
+- **Form Components**: Checkbox, Slider, Accordion with animations
+- **Layout**: ScrollArea, Tooltip, Portal with smooth interactions
+
+### Design System
+- **Apple UIKit Colors**: System colors that adapt to light/dark mode
+- **Responsive Design**: Mobile-first with viewport detection hooks
+- **Animation System**: Framer Motion with lazy loading and spring presets
+- **Theme Management**: Automatic dark/light mode with smooth transitions
+
+## State Management Patterns
+
+### Jotai Atomic State
+```typescript
+// Create atoms with utility hooks
+const userAtom = atom<User | null>(null)
+const [atom, useUser, useUserValue, useSetUser, getUser, setUser] = createAtomHooks(userAtom)
+
+// Usage
+const [user, setUser] = useUser()           // Read/write
+const user = useUserValue()                 // Read-only
+const setUser = useSetUser()               // Write-only
+```
+
+### React Query Integration
+```typescript
+export const useUserQuery = (userId: string) => {
+  return useQuery({
+    queryKey: ['user', userId],
+    queryFn: () => fetchUser(userId),
+    enabled: !!userId,
+  })
+}
+```
+
+## Routing System
+
+File-based routing with automatic generation:
+```
+src/pages/
+├── (main)/                    # Route group
+│   ├── index.sync.tsx        # → / (synchronous)
+│   ├── about.tsx             # → /about (lazy loaded)
+│   └── users/[id].sync.tsx   # → /users/:id (dynamic)
+```
+
+Route components support data loading:
+```typescript
+export const loader: LoaderFunction = async ({ params }) => {
+  return { user: await fetchUser(params.id!) }
+}
+
+export const Component = () => {
+  const { user } = useLoaderData() as LoaderData
+  return <div>User: {user.name}</div>
+}
+```
+
+## Development Experience
+
+### Commands
+```bash
+pnpm dev          # Development server (localhost:5173)
+pnpm build        # Production build with TypeScript check
+pnpm lint         # ESLint with auto-fix
+pnpm format       # Prettier formatting
+```
+
+### Features
+- **Hot Module Replacement**: Instant updates with state preservation
+- **TypeScript**: Real-time type checking with path mapping (`~/` for `src/`)
+- **Code Inspector**: Alt+click navigation to component source
+- **Git Hooks**: Pre-commit formatting and linting
+
+## Styling System
+
+### TailwindCSS with Apple UIKit Colors
+```tsx
+// Colors that adapt to light/dark mode
+<div className="bg-fill text-primary">           // Fill colors
+<div className="text-blue bg-material-thick">    // System + material colors
+<div className="text-text-secondary">            // Semantic text colors
+```
+
+### Component Variants
+```typescript
+const buttonVariants = tv({
+  base: 'inline-flex items-center justify-center',
+  variants: {
+    variant: { primary: 'bg-blue text-white', secondary: 'bg-gray' },
+    size: { sm: 'h-8 px-3', md: 'h-10 px-4' },
+  },
+  defaultVariants: { variant: 'primary', size: 'md' },
+})
+```
+
+### Responsive Design
+```tsx
+<div className="text-sm md:text-base lg:text-lg">  // Mobile-first responsive
+const isMobile = useViewport(v => !v.md)           // Viewport detection
+```
+
+## Animation Patterns
+
+### Framer Motion with Performance
+```tsx
+// Lazy-loaded features
+<LazyMotion features={loadFeatures} strict>
+  <MotionConfig transition={Spring.presets.smooth}>
+
+// Component animations
+<m.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={Spring.presets.smooth}
+>
+```
+
+## Key Development Patterns
+
+### Controlled/Uncontrolled Components
+```tsx
+import { useControlled } from '~/hooks/common/useControlled'
+
+const [value, setValue] = useControlled(
+  controlledValue,    // Optional controlled value
+  defaultValue,       // Default for uncontrolled
+  onChange           // Change handler
+)
+```
+
+### Polymorphic Components
+```tsx
+<Button asChild>
+  <Link to="/profile">Profile</Link>  // Renders as Link with Button styling
+</Button>
+```
+
+### Provider Composition
+```tsx
+export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
+  <LazyMotion features={loadFeatures} strict>
+    <MotionConfig transition={Spring.presets.smooth}>
+      <QueryClientProvider client={queryClient}>
+        <Provider store={jotaiStore}>
+          <EventProvider />
+          <ContextMenuProvider />
+          {children}
+        </Provider>
+      </QueryClientProvider>
+    </MotionConfig>
+  </LazyMotion>
+)
+```
+
+## Documentation
+
+- [docs/USER_GUIDE.md](./docs/USER_GUIDE.md): Step-by-step tutorial for new developers
+- [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md): Complete development workflows and best practices  
+- [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md): System design and architectural patterns
+- [docs/API.md](./docs/API.md): Component and hook API reference
+- [CLAUDE.md](./CLAUDE.md): AI assistant guidance for working with this codebase
+
+## Optional
+
+- [package.json](./package.json): Dependencies and scripts configuration
+- [tsconfig.json](./tsconfig.json): TypeScript configuration with path mapping
+- [vite.config.ts](./vite.config.ts): Vite configuration with plugins
+- [eslint.config.mjs](./eslint.config.mjs): ESLint configuration for React and TypeScript
