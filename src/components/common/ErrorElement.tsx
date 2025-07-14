@@ -125,13 +125,6 @@ export function ErrorElement() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <div className="h-16 flex items-center justify-center">
-        <p className="text-xs text-text-secondary/50">
-          Error ID: {Date.now().toString(36)}
-        </p>
-      </div>
     </div>
   )
 }
