@@ -175,7 +175,7 @@ const SelectItem = ({
   >
     <span className="absolute right-2 flex size-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <i className="i-mgc-check-filled size-3" />
+        <i className="i-mingcute-check-fill size-3" />
       </SelectPrimitive.ItemIndicator>
     </span>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

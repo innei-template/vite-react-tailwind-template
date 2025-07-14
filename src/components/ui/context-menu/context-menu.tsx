@@ -135,7 +135,7 @@ const ContextMenuCheckboxItem = ({
   >
     <span className="absolute left-2 flex items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator asChild>
-        <i className="i-mgc-check-filled size-3" />
+        <i className="i-mingcute-check-fill size-3" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
