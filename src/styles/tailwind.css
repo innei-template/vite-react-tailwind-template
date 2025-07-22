@@ -5,7 +5,7 @@
 @plugin 'tailwindcss-animate';
 @plugin 'tailwindcss-safe-area';
 
-@import 'tailwindcss-uikit-colors/v4/macos.css';
+@import '@pastel-palette/tailwindcss/dist/theme-data-attribute-oklch.css';
 
 @source "./src/**/*.{js,jsx,ts,tsx}";
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
@@ -13,26 +13,11 @@
 [data-theme='light'] {
   --radius: 0.5rem;
   --border: 20 5.9% 90%;
-
-  --accent: #1e90ff;
-  --accent-foreground: #f5f5f7;
-  --background: #f5f5f7;
-  --foreground: #1c1c1e;
-  --background-secondary: #efefef;
-  --background-tertiary: #e8e8e8;
-  --background-quaternary: #e0e0e0;
 }
 
 [data-theme='dark'] {
   --radius: 0.5rem;
   --border: 0 0% 22.1%;
-  --accent: #0f52ba;
-  --accent-foreground: #f5f5f7;
-  --background: #100d08;
-  --foreground: #f5f5f7;
-  --background-secondary: #1a1610;
-  --background-tertiary: #242018;
-  --background-quaternary: #2e2920;
 }
 
 [data-hand-cursor='true'] {
@@ -59,7 +44,7 @@
 
 :root,
 body {
-  @apply bg-background text-foreground;
+  @apply bg-background text-text;
   @apply font-sans;
   @apply text-base leading-normal;
   @apply antialiased;
@@ -81,16 +66,6 @@ body {
   --cursor-radio: var(--cursor-radio);
   --cursor-switch: var(--cursor-switch);
   --cursor-card: var(--cursor-card);
-
-  /* Colors */
-  --color-border: hsl(var(--border));
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-background-secondary: var(--background-secondary);
-  --color-background-tertiary: var(--background-tertiary);
-  --color-background-quaternary: var(--background-quaternary);
 
   /* Blur */
   --blur-background: 70px;

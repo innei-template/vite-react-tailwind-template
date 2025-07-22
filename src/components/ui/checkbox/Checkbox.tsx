@@ -36,7 +36,7 @@ function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
       <motion.button
         data-slot="checkbox"
         className={clsxm(
-          'peer size-5 flex items-center justify-center shrink-0 rounded-sm bg-fill-tertiary transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground',
+          'peer size-5 flex items-center justify-center shrink-0 rounded-sm bg-fill-tertiary transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-white',
           className,
         )}
         whileTap={{ scale: 0.95 }}

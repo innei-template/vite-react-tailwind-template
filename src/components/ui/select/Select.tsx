@@ -165,7 +165,7 @@ const SelectItem = ({
   <SelectPrimitive.Item
     ref={ref}
     className={clsxm(
-      'cursor-menu focus:bg-accent focus:text-accent-foreground relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'cursor-menu focus:bg-accent focus:text-white relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'data-[highlighted]:bg-accent text-sm focus-within:outline-transparent',
       'h-[28px] w-full',
       inset && 'pl-8',

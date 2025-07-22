@@ -11,6 +11,9 @@ importers:
       '@headlessui/react':
         specifier: 2.2.4
         version: 2.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@pastel-palette/tailwindcss':
+        specifier: 1.0.0-alpha.0
+        version: 1.0.0-alpha.0
       '@radix-ui/react-accordion':
         specifier: 1.2.11
         version: 1.2.11(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -83,9 +86,6 @@ importers:
       tailwind-merge:
         specifier: 3.3.1
         version: 3.3.1
-      tailwindcss-uikit-colors:
-        specifier: 1.0.0-alpha.1
-        version: 1.0.0-alpha.1
       usehooks-ts:
         specifier: 3.1.1
         version: 3.1.1(react@19.1.0)
@@ -93,9 +93,6 @@ importers:
       '@egoist/tailwindcss-icons':
         specifier: 1.9.0
         version: 1.9.0(tailwindcss@4.1.11)
-      '@follow-app/vite-plugin-route-builder':
-        specifier: 0.1.1
-        version: 0.1.1
       '@iconify-json/mingcute':
         specifier: 1.2.3
         version: 1.2.3
@@ -180,6 +177,9 @@ importers:
       vite-plugin-checker:
         specifier: 0.10.0
         version: 0.10.0(eslint@9.31.0(jiti@2.4.2))(optionator@0.9.4)(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)(yaml@2.8.0))
+      vite-plugin-route-builder:
+        specifier: 0.3.0
+        version: 0.3.0
       vite-tsconfig-paths:
         specifier: 5.1.4
         version: 5.1.4(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)(yaml@2.8.0))
@@ -608,9 +608,6 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@follow-app/vite-plugin-route-builder@0.1.1':
-    resolution: {integrity: sha512-pgKV1qT2xWWGmMcDs0nDQ5a1gYJ6yZqLz9DOL0RVj/52XqA7IiuBvlofJJ3MXdBewhmgYOvah+CrZyPc4StDeQ==}
-
   '@headlessui/react@2.2.4':
     resolution: {integrity: sha512-lz+OGcAH1dK93rgSMzXmm1qKOJkBUqZf1L4M8TWLNplftQD3IkoEDdUFNfAn4ylsN6WOTVtWaLmvmaHOUk1dTA==}
     engines: {node: '>=10'}
@@ -701,6 +698,12 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@pastel-palette/colors@1.0.0-alpha.0':
+    resolution: {integrity: sha512-G6ko1mqIAz5gEzsO/72Q+4rD+oTJkwPKYA1AW96HC8ziutuq+s4D+QNscp3Gkz1Nfa8cXtYefNqObZBp9YeROA==}
+
+  '@pastel-palette/tailwindcss@1.0.0-alpha.0':
+    resolution: {integrity: sha512-UKyplBl0Cf5J5CQpaW/8Lc3h9zhE+JiJHIuDas3ORfuufBMsHdRnskHI+fC1Cn4cI54W4R0sx2979yAmzJ9IDg==}
 
   '@pivanov/utils@0.0.2':
     resolution: {integrity: sha512-q9CN0bFWxWgMY5hVVYyBgez1jGiLBa6I+LkG37ycylPhFvEGOOeaADGtUSu46CaZasPnlY8fCdVJZmrgKb1EPA==}
@@ -1668,9 +1671,6 @@ packages:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
 
-  apple-uikit-colors@0.6.2:
-    resolution: {integrity: sha512-sv0b92krbTZGNt4AJQLAPioUvuEI/wW2cLqGuEBWl3KpU2JK/odOftx8+dGSC5jGWhdB5qnwBqF96X2FA8FUQA==}
-
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
@@ -1880,6 +1880,10 @@ packages:
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  culori@4.0.2:
+    resolution: {integrity: sha512-1+BhOB8ahCn4O0cep0Sh2l9KCOfOdY+BXJnKMHFFzDEouSr/el18QwXEMRlOj9UY5nCeA8UN3a/82rUWRBeyBw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -3350,9 +3354,6 @@ packages:
     peerDependencies:
       tailwindcss: ^2.0.0 || >=3.0.0
 
-  tailwindcss-uikit-colors@1.0.0-alpha.1:
-    resolution: {integrity: sha512-akeDIVZMRO6tFbr6x4YsRkx24xx/ofEfsJdL2lq7AE/sDBnUbs5Pr8by4ngBbxJ2U2eam000B/eJrb6r6YzLmw==}
-
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
 
@@ -3547,6 +3548,9 @@ packages:
         optional: true
       vue-tsc:
         optional: true
+
+  vite-plugin-route-builder@0.3.0:
+    resolution: {integrity: sha512-ukCx4NN9QbnsBNrPyVAbMHcyH9bg+qJI2zJcRDkXAbzahuZUxGXOEZPWY8/uEm52vdzdknG4W6iYFKvO/4lQtA==}
 
   vite-tsconfig-paths@5.1.4:
     resolution: {integrity: sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w==}
@@ -4143,8 +4147,6 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@follow-app/vite-plugin-route-builder@0.1.1': {}
-
   '@headlessui/react@2.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/react': 0.26.28(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4272,6 +4274,14 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
+
+  '@pastel-palette/colors@1.0.0-alpha.0':
+    dependencies:
+      culori: 4.0.2
+
+  '@pastel-palette/tailwindcss@1.0.0-alpha.0':
+    dependencies:
+      '@pastel-palette/colors': 1.0.0-alpha.0
 
   '@pivanov/utils@0.0.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -5228,8 +5238,6 @@ snapshots:
 
   ansi-styles@6.2.1: {}
 
-  apple-uikit-colors@0.6.2: {}
-
   argparse@2.0.1: {}
 
   aria-hidden@1.2.6:
@@ -5423,6 +5431,8 @@ snapshots:
   cssesc@3.0.0: {}
 
   csstype@3.1.3: {}
+
+  culori@4.0.2: {}
 
   debug@4.4.1:
     dependencies:
@@ -6879,10 +6889,6 @@ snapshots:
     dependencies:
       tailwindcss: 4.1.11
 
-  tailwindcss-uikit-colors@1.0.0-alpha.1:
-    dependencies:
-      apple-uikit-colors: 0.6.2
-
   tailwindcss@4.1.11: {}
 
   tapable@2.2.2: {}
@@ -7063,6 +7069,8 @@ snapshots:
       eslint: 9.31.0(jiti@2.4.2)
       optionator: 0.9.4
       typescript: 5.8.3
+
+  vite-plugin-route-builder@0.3.0: {}
 
   vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)(yaml@2.8.0)):
     dependencies:

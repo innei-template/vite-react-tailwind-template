@@ -22,7 +22,7 @@ const buttonVariants = tv({
         // border
         '!border-transparent',
         // text color
-        'text-accent-foreground',
+        'text-white',
         'bg-accent',
         // active state
         'active:scale-[0.98]',
