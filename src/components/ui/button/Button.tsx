@@ -12,7 +12,7 @@ const buttonVariants = tv({
     // base - 调整圆角和间距
     'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-4 py-2 text-center text-sm font-medium shadow-sm transition-all duration-200 ease-out',
     // disabled
-    'disabled:pointer-events-none disabled:shadow-none disabled:bg-control-disabled disabled:text-text-secondary',
+    'disabled:pointer-events-none disabled:shadow-none disabled:bg-control-disabled disabled:text-text-quaternary',
     // focus
     focusRing,
   ],

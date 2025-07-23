@@ -12,8 +12,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@pastel-palette/tailwindcss':
-        specifier: 1.0.0-alpha.0
-        version: 1.0.0-alpha.0
+        specifier: 1.0.0-beta.0
+        version: 1.0.0-beta.0
       '@radix-ui/react-accordion':
         specifier: 1.2.11
         version: 1.2.11(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -699,11 +699,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@pastel-palette/colors@1.0.0-alpha.0':
-    resolution: {integrity: sha512-G6ko1mqIAz5gEzsO/72Q+4rD+oTJkwPKYA1AW96HC8ziutuq+s4D+QNscp3Gkz1Nfa8cXtYefNqObZBp9YeROA==}
+  '@pastel-palette/colors@1.0.0-beta.0':
+    resolution: {integrity: sha512-ngcBRFqzFgwFucFnp3TLgef/3GhWiIf6DRQuH+cKB3TkgnTLVmwPpdwEJgto9ZErD6JzoEm3t67qCZFge7SE1w==}
 
-  '@pastel-palette/tailwindcss@1.0.0-alpha.0':
-    resolution: {integrity: sha512-UKyplBl0Cf5J5CQpaW/8Lc3h9zhE+JiJHIuDas3ORfuufBMsHdRnskHI+fC1Cn4cI54W4R0sx2979yAmzJ9IDg==}
+  '@pastel-palette/tailwindcss@1.0.0-beta.0':
+    resolution: {integrity: sha512-/BlMScUx0G1JhV7/hiL0sLqLQ8KgkGAreKZjVdrSxUGy5cc3rVNYd/bmKqeQ7RtKbsEX2yvtXe1rdbEbxJ6kHQ==}
 
   '@pivanov/utils@0.0.2':
     resolution: {integrity: sha512-q9CN0bFWxWgMY5hVVYyBgez1jGiLBa6I+LkG37ycylPhFvEGOOeaADGtUSu46CaZasPnlY8fCdVJZmrgKb1EPA==}
@@ -4275,13 +4275,13 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@pastel-palette/colors@1.0.0-alpha.0':
+  '@pastel-palette/colors@1.0.0-beta.0':
     dependencies:
       culori: 4.0.2
 
-  '@pastel-palette/tailwindcss@1.0.0-alpha.0':
+  '@pastel-palette/tailwindcss@1.0.0-beta.0':
     dependencies:
-      '@pastel-palette/colors': 1.0.0-alpha.0
+      '@pastel-palette/colors': 1.0.0-beta.0
 
   '@pivanov/utils@0.0.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:

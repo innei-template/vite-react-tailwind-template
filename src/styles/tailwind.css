@@ -5,7 +5,7 @@
 @plugin 'tailwindcss-animate';
 @plugin 'tailwindcss-safe-area';
 
-@import '@pastel-palette/tailwindcss/dist/theme-data-attribute-oklch.css';
+@import '@pastel-palette/tailwindcss/dist/theme-oklch.css';
 
 @source "./src/**/*.{js,jsx,ts,tsx}";
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
