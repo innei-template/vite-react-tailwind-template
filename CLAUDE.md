@@ -20,7 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Vite** + React 19 + TypeScript with file-based routing
 - **State Management**: Jotai store with custom hooks (`src/lib/jotai.ts`)
 - **UI Components**: Radix UI primitives + custom components in `src/components/ui/`
-- **Styling**: TailwindCSS 4 with Apple UIKit color system
+- **Styling**: TailwindCSS 4 with Pastel color system
 - **Routing**: React Router with auto-generated routes via `@follow-app/vite-plugin-route-builder`
 
 ### Key Architectural Patterns
@@ -48,9 +48,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - Context menu, event, and settings providers
 
 ### Color System
-- Uses Apple UIKit colors via `tailwindcss-uikit-colors`
+- Uses Pastel color system via `@pastel-palette/tailwindcss`
+- Kawaii-inspired OKLCH color space with sRGB and P3 fallbacks
+- Three variants: regular (default), kawaii (softer), high-contrast (accessible)
 - Defined in `.cursor/rules/color.mdc` - prefer these over standard Tailwind colors
-- Examples: `text-primary`, `fill-secondary`, `material-thin`, etc.
+- Examples: `text-text`, `bg-background`, `border-border`, `bg-accent`, etc.
+- Dark mode support via TailwindCSS v4 built-in dark mode
+- Color variants controlled via `data-contrast="low|high"` attributes
 
 ### Code Style Rules
 - ESLint config: `eslint-config-hyoban` with React-specific rules

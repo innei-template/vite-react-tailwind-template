@@ -2,25 +2,66 @@
 description: write a component
 alwaysApply: false
 ---
-# UIKit Colors for Tailwind CSS
+# Pastel Colors for TailwindCSS
 
-You should use @https://github.com/Innei/apple-uikit-colors/blob/main/packages/uikit-colors/macos.ts TailwindCSS atom classname.
+You should use @https://github.com/Innei/Pastel Pastel color system with kawaii-inspired OKLCH colors and TailwindCSS v4 integration.
 
-Use Apple UIKit color system with Tailwind classes. **Important**: Always use the correct Tailwind prefix for each color category:
+Use Pastel color system with Tailwind classes. **Important**: Always use the correct Tailwind prefix for each color category:
 
-**System Colors**: `text-red`, `bg-red`, `border-red` (same for `orange`, `yellow`, `green`, `mint`, `teal`, `cyan`, `blue`, `indigo`, `purple`, `pink`, `brown`, `gray`)
+**Regular Colors**: `text-blue`, `bg-pink`, `border-purple` (same for `green`, `orange`, `yellow`, `sky`, `red`, `brown`, `gray`, `neutral`, `black`, `white`)
 
-**Fill Colors**:
+**Semantic Colors**:
 
-- Background: `bg-fill`, `bg-fill-secondary`, `bg-fill-tertiary`, `bg-fill-quaternary`, `bg-fill-quinary`, `bg-fill-vibrant`, `bg-fill-vibrant-secondary`, `bg-fill-vibrant-tertiary`, `bg-fill-vibrant-quaternary`, `bg-fill-vibrant-quinary`
-- Border: `border-fill`, `border-fill-secondary`, etc.
+- **Text**: `text-text`, `text-placeholderText`, `text-link`, `text-disabledText`
+- **Background**: `bg-background`, `bg-background-secondary`, `bg-background-tertiary`, `bg-background-quaternary`, `bg-background-quinary`
+- **Border**: `border-border`, `border-separator`
+- **Fill**: `bg-fill`, `bg-fill-secondary`, `bg-fill-tertiary`, `bg-fill-quaternary`, `bg-fill-quinary`
 
-**Text Colors**: `text-text`, `text-text-secondary`, `text-text-tertiary`, `text-text-quaternary`, `text-text-quinary`, `text-text-vibrant`, `text-text-vibrant-secondary`, `text-text-vibrant-tertiary`, `text-text-vibrant-quaternary`, `text-text-vibrant-quinary`
+**Material Colors**: `bg-material-ultraThick`, `bg-material-thick`, `bg-material-medium`, `bg-material-thin`, `bg-material-ultraThin`, `bg-material-opaque`
 
-**Material Colors**: `bg-material-ultra-thick`, `bg-material-thick`, `bg-material-medium`, `bg-material-thin`, `bg-material-ultra-thin`, `bg-material-opaque`
+**Application Colors**: `bg-accent`, `bg-primary`, `bg-secondary`, `text-accent`, `text-primary`, `text-secondary`
 
-**Control Colors**: `bg-control-enabled`, `bg-control-disabled`
+**Control Colors**: `bg-disabledControl`
 
-**Interface Colors**: `bg-menu`, `bg-popover`, `bg-titlebar`, `bg-sidebar`, `bg-selection-focused`, `bg-selection-focused-fill`, `bg-selection-unfocused`, `bg-selection-unfocused-fill`, `bg-header-view`, `bg-tooltip`, `bg-under-window-background`
+**Color Variants**:
 
-These colors automatically adapt to light/dark mode following Apple's design system. Remember to use the appropriate prefix (`text-`, `bg-`, `border-`) based on the CSS property you're styling.
+- **Kawaii (softer)**: Add `-kawaii` suffix: `bg-background-kawaii`, `text-text-kawaii`
+- **High contrast (accessible)**: Add `-hc` suffix: `bg-background-hc`, `text-text-hc`
+- **Light/Dark specific**: Add `-light` or `-dark` suffix: `bg-background-light`, `text-text-dark`
+
+**Dark Mode & Variants Control**:
+
+- **Dark mode**: Use `dark:` prefix with TailwindCSS v4 built-in support
+- **Color variants**: Use `data-contrast="low"` for kawaii or `data-contrast="high"` for high-contrast on HTML element
+- **Automatic adaptation**: All color variants work seamlessly with dark mode
+
+**Usage Examples**:
+
+```html
+<!-- Regular usage with automatic dark mode -->
+<div class="bg-background text-text border border-border">
+  Content with default colors
+</div>
+
+<!-- Kawaii variant -->
+<html data-contrast="low">
+  <div class="bg-background text-text">Kawaii colors with auto dark mode</div>
+</html>
+
+<!-- High contrast variant -->
+<html data-contrast="high">
+  <div class="bg-background text-text">High contrast colors</div>
+</html>
+
+<!-- Fixed kawaii colors (no dark mode switching) -->
+<div class="bg-background-kawaii text-text-kawaii">
+  Always kawaii colors
+</div>
+
+<!-- Dark mode with regular colors -->
+<div class="bg-background dark:bg-background text-text dark:text-text">
+  Responsive dark mode
+</div>
+```
+
+These colors use OKLCH color space with sRGB and P3 fallbacks, providing modern color rendering with kawaii aesthetic and accessibility support. The system automatically adapts to light/dark mode following TailwindCSS v4 conventions.
