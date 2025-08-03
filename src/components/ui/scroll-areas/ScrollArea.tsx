@@ -38,8 +38,8 @@ const Thumb = ({
     ref={forwardedRef}
     className={clsxm(
       'relative w-full flex-1 backdrop-blur-3xl rounded-xl transition-colors duration-150',
-      'bg-zinc-500/50 hover:bg-zinc-500/70',
-      'active:bg-zinc-500/70',
+      'bg-placeholderText/50 hover:bg-placeholderText/70',
+      'active:bg-placeholderText/70',
       'before:absolute before:-left-1/2 before:-top-1/2 before:h-full before:min-h-[44]',
       'before:w-full before:min-w-[44] before:-translate-x-full before:-translate-y-full before:content-[""]',
 

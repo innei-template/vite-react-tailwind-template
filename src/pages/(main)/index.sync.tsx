@@ -1,21 +1,4 @@
-import {
-  ArrowRight,
-  Code2,
-  Copy,
-  Download,
-  Edit,
-  Github,
-  Heart,
-  Monitor,
-  Moon,
-  Rocket,
-  Settings,
-  Share,
-  Star,
-  Sun,
-  Trash2,
-  Zap,
-} from 'lucide-react'
+// Icons now use Tailwind CSS mingcute icons
 import { useState } from 'react'
 
 import { Button } from '~/components/ui/button/Button'
@@ -74,26 +57,26 @@ export const Component = () => {
   }
 
   const themeOptions = [
-    { value: 'light', icon: Sun, label: 'Light' },
-    { value: 'dark', icon: Moon, label: 'Dark' },
-    { value: 'system', icon: Monitor, label: 'System' },
+    { value: 'light', icon: 'i-mingcute-sun-line', label: 'Light' },
+    { value: 'dark', icon: 'i-mingcute-moon-line', label: 'Dark' },
+    { value: 'system', icon: 'i-mingcute-monitor-line', label: 'System' },
   ] as const
 
   const features = [
     {
-      icon: Zap,
+      icon: 'i-mingcute-lightning-line',
       title: 'Lightning Fast',
       description:
         'Built with Vite for instant dev server and optimized builds',
     },
     {
-      icon: Code2,
+      icon: 'i-mingcute-code-line',
       title: 'Developer Experience',
       description:
         'ESLint, Prettier, Git hooks, and TypeScript configured out of the box',
     },
     {
-      icon: Rocket,
+      icon: 'i-mingcute-rocket-line',
       title: 'Production Ready',
       description:
         'Optimized builds, automatic code splitting, and modern tooling',
@@ -112,36 +95,37 @@ export const Component = () => {
   ]
 
   return (
-    <div className="min-h-screen transition-colors">
+    <div className="min-h-screen transition-colors bg-background text-text">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 dark:border-gray-800">
+      <nav className="border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-black dark:bg-white rounded-sm flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white dark:text-black" />
+              <div className="w-6 h-6 bg-accent rounded-sm flex items-center justify-center">
+                <i className="i-mingcute-lightning-line w-4 h-4 text-background" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                Vite Template
+              <span className="font-semibold text-text">
+                Smart Webapp Template
               </span>
             </div>
 
-            <div className="flex items-center gap-1 p-1 bg-gray-100 dark:bg-gray-900 rounded-lg">
-              {themeOptions.map(({ value, icon: Icon, label }) => (
+            <div className="flex items-center gap-1 p-1 bg-material-medium rounded-lg">
+              {themeOptions.map(({ value, icon, label }) => (
                 <Tooltip key={value}>
                   <TooltipTrigger>
                     <button
+                      type="button"
                       onClick={() => setTheme(value)}
                       className={`
                         p-1.5 rounded-md transition-all text-xs font-medium
                         ${
                           theme === value
-                            ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm'
-                            : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
+                            ? 'bg-background text-text shadow-sm'
+                            : 'text-placeholderText hover:text-text'
                         }
                       `}
                     >
-                      <Icon className="w-4 h-4" />
+                      <i className={`${icon} w-4 h-4`} />
                     </button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -158,18 +142,18 @@ export const Component = () => {
         {/* Hero Section */}
         <section className="pt-24 pb-16">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-gray-900 rounded-full text-sm text-gray-600 dark:text-gray-400 mb-8">
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-material-medium rounded-full text-sm text-placeholderText mb-8">
+              <div className="w-2 h-2 bg-green rounded-full" />
               Ready for production
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-text mb-6">
               Modern React
               <br />
-              <span className="text-gray-500 dark:text-gray-400">Template</span>
+              <span className="text-placeholderText">Template</span>
             </h1>
 
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+            <p className="text-xl text-placeholderText mb-12 leading-relaxed">
               A production-ready template with modern tooling, best practices,
               and beautiful components. Start building immediately.
             </p>
@@ -177,18 +161,18 @@ export const Component = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 variant="primary"
-                className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 border-0 px-8 py-3 h-auto text-base font-medium"
+                className="bg-accent text-background hover:bg-accent/80 border-0 px-8 py-3 h-auto text-base font-medium"
               >
                 Get Started
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <i className="i-mingcute-arrow-right-line w-4 h-4 ml-2" />
               </Button>
 
               <Button
                 variant="ghost"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 px-8 py-3 h-auto text-base font-medium"
+                className="text-placeholderText hover:text-text px-8 py-3 h-auto text-base font-medium"
                 onClick={() => window.open(repository.url, '_blank')}
               >
-                <Github className="w-4 h-4 mr-2" />
+                <i className="i-mingcute-github-line w-4 h-4 mr-2" />
                 View on GitHub
               </Button>
             </div>
@@ -196,12 +180,12 @@ export const Component = () => {
         </section>
 
         {/* Tech Stack */}
-        <section className="py-16 border-t border-gray-200 dark:border-gray-800">
+        <section className="py-16 border-t border-border">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-2xl font-semibold text-text mb-4">
               Built with modern tools
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-placeholderText">
               Everything you need for a professional development experience
             </p>
           </div>
@@ -210,11 +194,9 @@ export const Component = () => {
             {techStack.map((tech) => (
               <div
                 key={tech}
-                className="p-4 border border-gray-200 dark:border-gray-800 rounded-lg text-center hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
+                className="p-4 border border-border rounded-lg text-center hover:border-border/70 transition-colors bg-material-thin hover:bg-material-medium"
               >
-                <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                  {tech}
-                </span>
+                <span className="text-sm font-medium text-text">{tech}</span>
               </div>
             ))}
           </div>
@@ -223,10 +205,10 @@ export const Component = () => {
         {/* Features */}
         <section className="py-16">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-3xl font-bold text-text mb-4">
               Everything you need
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-placeholderText">
               A complete development environment ready to go
             </p>
           </div>
@@ -235,15 +217,17 @@ export const Component = () => {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="p-6 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-gray-300 dark:hover:border-gray-700 transition-all group"
+                className="p-6 border border-border rounded-xl hover:border-border/70 transition-all group bg-material-thin hover:bg-material-medium"
               >
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-200 dark:group-hover:bg-gray-800 transition-colors">
-                  <feature.icon className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                <div className="w-12 h-12 bg-fill rounded-lg flex items-center justify-center mb-4 group-hover:bg-fill-secondary transition-colors">
+                  <i
+                    className={`${feature.icon} w-6 h-6 text-placeholderText group-hover:text-text`}
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-lg font-semibold text-text mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600  dark:text-gray-400 leading-relaxed">
+                <p className="text-placeholderText leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -252,22 +236,22 @@ export const Component = () => {
         </section>
 
         {/* Interactive Demo */}
-        <section className="py-16 border-t border-gray-200 dark:border-gray-800">
+        <section className="py-16 border-t border-border">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-2xl font-semibold text-text mb-4">
               Interactive Components
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-placeholderText">
               Try out the included UI components
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="p-8 border border-gray-200 dark:border-gray-800 rounded-xl bg-gray-50 dark:bg-gray-950">
+            <div className="p-8 border border-border rounded-xl bg-material-thin">
               <div className="grid md:grid-cols-2 gap-12">
                 {/* Button Examples */}
                 <div>
-                  <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">
+                  <h3 className="font-medium text-text mb-4">
                     Button Variants
                   </h3>
                   <div className="space-y-3">
@@ -287,25 +271,26 @@ export const Component = () => {
 
                 {/* Interactive Elements */}
                 <div>
-                  <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">
+                  <h3 className="font-medium text-text mb-4">
                     Interactive Elements
                   </h3>
                   <div className="flex items-center gap-4">
                     <Tooltip>
                       <TooltipTrigger>
                         <button
+                          type="button"
                           onClick={handleStar}
                           className={`
-                            p-2 border border-gray-200 dark:border-gray-800 rounded-lg transition-all
+                            p-2 border border-border rounded-lg transition-all size-10
                             ${
                               isStarred
-                                ? 'bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-800 text-yellow-600 dark:text-yellow-400'
-                                : 'hover:border-gray-300 dark:hover:border-gray-700 text-gray-400 dark:text-gray-600'
+                                ? 'bg-yellow/10 border-yellow text-yellow'
+                                : 'hover:border-border/70 text-placeholderText hover:text-text bg-fill'
                             }
                           `}
                         >
-                          <Star
-                            className={`w-4 h-4 ${isStarred ? 'fill-current' : ''}`}
+                          <i
+                            className={`i-mingcute-star-line w-4 h-4 ${isStarred ? 'text-yellow-400' : ''}`}
                           />
                         </button>
                       </TooltipTrigger>
@@ -318,20 +303,21 @@ export const Component = () => {
                     </Tooltip>
 
                     <Tooltip>
-                      <TooltipTrigger>
+                      <TooltipTrigger asChild>
                         <button
+                          type="button"
                           onClick={handleLike}
                           className={`
-                            p-2 border border-gray-200 dark:border-gray-800 rounded-lg transition-all
+                            p-2 border border-border rounded-lg transition-all size-10
                             ${
                               isLiked
-                                ? 'bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-600 dark:text-red-400'
-                                : 'hover:border-gray-300 dark:hover:border-gray-700 text-gray-400 dark:text-gray-600'
+                                ? 'bg-red/10 border-red text-red'
+                                : 'hover:border-border/70 text-placeholderText hover:text-text bg-fill'
                             }
                           `}
                         >
-                          <Heart
-                            className={`w-4 h-4 ${isLiked ? 'fill-current' : ''}`}
+                          <i
+                            className={`i-mingcute-heart-line w-4 h-4 ${isLiked ? 'text-red-400' : ''}`}
                           />
                         </button>
                       </TooltipTrigger>
@@ -344,30 +330,29 @@ export const Component = () => {
                     </Tooltip>
 
                     <button
+                      type="button"
                       onClick={() =>
                         window.open(
-                          'https://github.com/innei-template/vite-react-tailwind-template',
+                          'https://github.com/innei-template/smart-webapp-template',
                           '_blank',
                         )
                       }
-                      className="p-2 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-gray-300 dark:hover:border-gray-700 text-gray-400 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-100 transition-all"
+                      className="p-2 border size-10 border-border rounded-lg hover:border-border/70 text-placeholderText hover:text-text transition-all bg-fill hover:bg-fill-secondary"
                     >
-                      <Github className="w-4 h-4" />
+                      <i className="i-mingcute-github-line w-4 h-4" />
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Form Components */}
-              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">
-                  Form Components
-                </h3>
+              <div className="mt-12 pt-8 border-t border-border">
+                <h3 className="font-medium text-text mb-4">Form Components</h3>
 
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Input Examples */}
                   <div className="space-y-4">
-                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <h4 className="text-sm font-medium text-text">
                       Input Fields
                     </h4>
                     <Input placeholder="Default input" />
@@ -378,7 +363,7 @@ export const Component = () => {
 
                   {/* Select Examples */}
                   <div className="space-y-4">
-                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <h4 className="text-sm font-medium text-text">
                       Select Dropdown
                     </h4>
                     <Select>
@@ -402,25 +387,25 @@ export const Component = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Checkbox Examples */}
                   <div className="space-y-4">
-                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <h4 className="text-sm font-medium text-text">
                       Checkboxes
                     </h4>
                     <div className="space-y-3">
                       <label className="flex items-center gap-3 cursor-pointer">
                         <Checkbox defaultChecked />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                        <span className="text-sm text-text">
                           Checked by default
                         </span>
                       </label>
                       <label className="flex items-center gap-3 cursor-pointer">
                         <Checkbox />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                        <span className="text-sm text-text">
                           Unchecked option
                         </span>
                       </label>
                       <label className="flex items-center gap-3 cursor-not-allowed opacity-50">
                         <Checkbox disabled />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                        <span className="text-sm text-text">
                           Disabled checkbox
                         </span>
                       </label>
@@ -429,12 +414,10 @@ export const Component = () => {
 
                   {/* Slider Examples */}
                   <div className="space-y-4">
-                    <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      Sliders
-                    </h4>
+                    <h4 className="text-sm font-medium text-text">Sliders</h4>
                     <div className="space-y-6">
                       <div>
-                        <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <label className="block text-sm text-placeholderText mb-2">
                           Primary Slider
                         </label>
                         <Slider
@@ -445,7 +428,7 @@ export const Component = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <label className="block text-sm text-placeholderText mb-2">
                           Secondary Slider
                         </label>
                         <Slider
@@ -461,24 +444,22 @@ export const Component = () => {
               </div>
 
               {/* Context Menu Demo */}
-              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-                <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">
-                  Context Menu
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              <div className="mt-12 pt-8 border-t border-border">
+                <h3 className="font-medium text-text mb-4">Context Menu</h3>
+                <p className="text-sm text-placeholderText mb-4">
                   Right-click on the card below to see the context menu in
                   action
                 </p>
 
                 <ContextMenu>
                   <ContextMenuTrigger>
-                    <div className="p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer">
+                    <div className="p-6 border-2 border-dashed border-border rounded-lg hover:border-border/70 transition-colors cursor-pointer bg-fill/20 hover:bg-fill/40">
                       <div className="text-center">
-                        <Settings className="w-8 h-8 text-gray-400 dark:text-gray-500 mx-auto mb-2" />
-                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        <i className="i-mingcute-settings-3-line w-8 h-8 text-placeholderText mx-auto mb-2" />
+                        <p className="text-sm font-medium text-text">
                           Right-click me!
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                        <p className="text-xs text-placeholderText mt-1">
                           Try the context menu functionality
                         </p>
                       </div>
@@ -492,28 +473,28 @@ export const Component = () => {
                     <ContextMenuItem
                       onClick={() => handleContextAction('copy')}
                     >
-                      <Copy className="w-4 h-4 mr-2" />
+                      <i className="i-mingcute-copy-2-line w-4 h-4 mr-2" />
                       Copy
                     </ContextMenuItem>
 
                     <ContextMenuItem
                       onClick={() => handleContextAction('edit')}
                     >
-                      <Edit className="w-4 h-4 mr-2" />
+                      <i className="i-mingcute-edit-line w-4 h-4 mr-2" />
                       Edit
                     </ContextMenuItem>
 
                     <ContextMenuItem
                       onClick={() => handleContextAction('share')}
                     >
-                      <Share className="w-4 h-4 mr-2" />
+                      <i className="i-mingcute-share-forward-line w-4 h-4 mr-2" />
                       Share
                     </ContextMenuItem>
 
                     <ContextMenuItem
                       onClick={() => handleContextAction('download')}
                     >
-                      <Download className="w-4 h-4 mr-2" />
+                      <i className="i-mingcute-download-2-line w-4 h-4 mr-2" />
                       Download
                     </ContextMenuItem>
 
@@ -539,9 +520,9 @@ export const Component = () => {
 
                     <ContextMenuItem
                       onClick={() => handleContextAction('delete')}
-                      className="text-red-600 dark:text-red-400 focus:text-red-600 dark:focus:text-red-400"
+                      className="text-red focus:text-red"
                     >
-                      <Trash2 className="w-4 h-4 mr-2" />
+                      <i className="i-mingcute-delete-2-line w-4 h-4 mr-2" />
                       Delete
                     </ContextMenuItem>
                   </ContextMenuContent>
@@ -554,33 +535,35 @@ export const Component = () => {
         {/* Quick Start */}
         <section className="py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-2xl font-semibold text-text mb-4">
               Quick Start
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-placeholderText mb-8">
               Get up and running in less than a minute
             </p>
 
-            <div className="p-6 bg-gray-900 dark:bg-gray-950 rounded-xl text-left">
+            <div className="p-6 bg-material-opaque rounded-xl text-left border border-border">
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full" />
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
+                  <div className="w-3 h-3 bg-red rounded-full" />
+                  <div className="w-3 h-3 bg-yellow rounded-full" />
+                  <div className="w-3 h-3 bg-green rounded-full" />
                 </div>
-                <span className="text-gray-400 text-sm font-mono">
+                <span className="text-placeholderText text-sm font-mono">
                   Terminal
                 </span>
               </div>
               <div className="font-mono text-sm space-y-2">
-                <div className="text-gray-400"># Clone and install</div>
-                <div className="text-green-400">pnpm install</div>
-                <div className="text-gray-400 mt-4">
+                <div className="text-placeholderText"># Clone and install</div>
+                <div className="text-green">pnpm install</div>
+                <div className="text-placeholderText mt-4">
                   # Start development server
                 </div>
-                <div className="text-green-400">pnpm dev</div>
-                <div className="text-gray-400 mt-4"># Build for production</div>
-                <div className="text-green-400">pnpm build</div>
+                <div className="text-green">pnpm dev</div>
+                <div className="text-placeholderText mt-4">
+                  # Build for production
+                </div>
+                <div className="text-green">pnpm build</div>
               </div>
             </div>
           </div>

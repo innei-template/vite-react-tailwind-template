@@ -1,4 +1,4 @@
-# User Guide: Vite React TailwindCSS Template
+# User Guide: Smart WebApp Template
 
 ## Quick Start Tutorial
 
@@ -15,7 +15,7 @@ Before you begin, ensure you have:
 
 ```bash
 # Clone the template
-git clone https://github.com/innei-template/vite-react-tailwind-template my-app
+git clone https://github.com/innei-template/smart-webapp-template my-app
 cd my-app
 
 # Install dependencies

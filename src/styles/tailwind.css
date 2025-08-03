@@ -10,16 +10,6 @@
 @source "./src/**/*.{js,jsx,ts,tsx}";
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
-[data-theme='light'] {
-  --radius: 0.5rem;
-  --border: 20 5.9% 90%;
-}
-
-[data-theme='dark'] {
-  --radius: 0.5rem;
-  --border: 0 0% 22.1%;
-}
-
 [data-hand-cursor='true'] {
   --cursor-button: pointer;
   --cursor-select: text;

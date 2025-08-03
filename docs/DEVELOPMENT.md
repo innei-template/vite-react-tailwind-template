@@ -13,7 +13,7 @@
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd vite-react-tailwind-template
+cd smart-webapp-template
 
 # Install dependencies
 pnpm install
