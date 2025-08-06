@@ -84,9 +84,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Animation Presets**:
 - **Prefer Spring Presets**: Use predefined spring animations from `src/lib/spring.ts`
-- **Available Presets**: `Spring.presets.smooth`, `Spring.presets.snappy`, `Spring.presets.bouncy` (extracted from Apple's spring parameters)
+- **Available Presets Constants**: `Spring.presets.smooth`, `Spring.presets.snappy`, `Spring.presets.bouncy` (extracted from Apple's spring parameters)
 - **Import**: `import { Spring } from '~/lib/spring'`
-- **Usage Example**: `transition={Spring.presets.smooth()}` or `transition={Spring.snappy(0.3, 0.1)}`
+- **Usage Example**: `transition={Spring.presets.smooth}` or `transition={Spring.snappy(0.3, 0.1)}`
 - **Customization**: All presets accept optional `duration` and `extraBounce` parameters
 
 ### Color System
