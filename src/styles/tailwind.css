@@ -120,6 +120,18 @@ body {
   /* Height and max-height */
   --height-screen: 100vh;
   --max-height-screen: 100vh;
+
+  --color-primary: var(--color-accent);
+  --color-primary-light: var(--color-accent-light);
+  --color-primary-dark: var(--color-accent-dark);
+}
+
+@layer theme {
+  #root {
+    --color-primary: var(--color-accent);
+    --color-primary-light: var(--color-accent-light);
+    --color-primary-dark: var(--color-accent-dark);
+  }
 }
 
 @layer base {

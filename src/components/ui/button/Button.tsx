@@ -12,7 +12,7 @@ const buttonVariants = tv({
     // base - 调整圆角和间距
     'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-4 py-2 text-center text-sm font-medium shadow-sm transition-all duration-200 ease-out',
     // disabled
-    'disabled:pointer-events-none disabled:shadow-none disabled:bg-disabledControl disabled:text-disabledText',
+    'disabled:pointer-events-none disabled:shadow-none disabled:bg-disabled-control disabled:text-disabled-text',
     // focus
     focusRing,
   ],
@@ -41,7 +41,7 @@ const buttonVariants = tv({
         // active state
         'active:bg-fill-tertiary active:scale-[0.98]',
         // disabled
-        'disabled:bg-fill disabled:text-disabledText disabled:border-border',
+        'disabled:bg-fill disabled:text-disabled-text disabled:border-border',
       ],
       light: [
         // base
@@ -57,7 +57,7 @@ const buttonVariants = tv({
         // active state
         'active:bg-fill-quaternary active:scale-[0.98]',
         // disabled
-        'disabled:bg-fill disabled:text-disabledText',
+        'disabled:bg-fill disabled:text-disabled-text',
       ],
       ghost: [
         // base
@@ -65,13 +65,13 @@ const buttonVariants = tv({
         // border
         'border-transparent',
         // text color
-        'text-placeholderText',
+        'text-placeholder-text',
         // hover color
         'bg-transparent hover:bg-fill hover:text-text',
         // active state
         'active:bg-fill-secondary active:scale-[0.98]',
         // disabled
-        'disabled:text-disabledText',
+        'disabled:text-disabled-text',
       ],
       destructive: [
         // text color

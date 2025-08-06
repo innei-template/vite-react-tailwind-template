@@ -35,7 +35,7 @@ export const Slider = ({
       <SliderPrimitive.Range
         className={clsxm(
           'absolute h-full',
-          variant === 'primary' ? 'bg-accent/80' : 'bg-placeholderText',
+          variant === 'primary' ? 'bg-accent/80' : 'bg-placeholder-text',
         )}
       />
     </SliderPrimitive.Track>
@@ -44,7 +44,7 @@ export const Slider = ({
         'block size-4 rounded-full border shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
         variant === 'primary'
           ? 'border-accent/50 focus-visible:ring-accent bg-accent'
-          : 'border-placeholderText focus-visible:ring-placeholderText bg-material-opaque',
+          : 'border-placeholder-text focus-visible:ring-placeholder-text bg-material-opaque',
       )}
     />
   </SliderPrimitive.Root>

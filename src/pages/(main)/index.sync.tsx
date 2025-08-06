@@ -121,7 +121,7 @@ export const Component = () => {
                         ${
                           theme === value
                             ? 'bg-background text-text shadow-sm'
-                            : 'text-placeholderText hover:text-text'
+                            : 'text-placeholder-text hover:text-text'
                         }
                       `}
                     >
@@ -142,7 +142,7 @@ export const Component = () => {
         {/* Hero Section */}
         <section className="pt-24 pb-16">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-material-medium rounded-full text-sm text-placeholderText mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-material-medium rounded-full text-sm text-placeholder-text mb-8">
               <div className="w-2 h-2 bg-green rounded-full" />
               Ready for production
             </div>
@@ -150,10 +150,10 @@ export const Component = () => {
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-text mb-6">
               Modern React
               <br />
-              <span className="text-placeholderText">Template</span>
+              <span className="text-placeholder-text">Template</span>
             </h1>
 
-            <p className="text-xl text-placeholderText mb-12 leading-relaxed">
+            <p className="text-xl text-placeholder-text mb-12 leading-relaxed">
               A production-ready template with modern tooling, best practices,
               and beautiful components. Start building immediately.
             </p>
@@ -162,6 +162,7 @@ export const Component = () => {
               <Button
                 variant="primary"
                 className="bg-accent text-background hover:bg-accent/80 border-0 px-8 py-3 h-auto text-base font-medium"
+                onClick={() => window.open(repository.url, '_blank')}
               >
                 Get Started
                 <i className="i-mingcute-arrow-right-line w-4 h-4 ml-2" />
@@ -169,7 +170,7 @@ export const Component = () => {
 
               <Button
                 variant="ghost"
-                className="text-placeholderText hover:text-text px-8 py-3 h-auto text-base font-medium"
+                className="text-placeholder-text hover:text-text px-8 py-3 h-auto text-base font-medium"
                 onClick={() => window.open(repository.url, '_blank')}
               >
                 <i className="i-mingcute-github-line w-4 h-4 mr-2" />
@@ -185,7 +186,7 @@ export const Component = () => {
             <h2 className="text-2xl font-semibold text-text mb-4">
               Built with modern tools
             </h2>
-            <p className="text-placeholderText">
+            <p className="text-placeholder-text">
               Everything you need for a professional development experience
             </p>
           </div>
@@ -208,7 +209,7 @@ export const Component = () => {
             <h2 className="text-3xl font-bold text-text mb-4">
               Everything you need
             </h2>
-            <p className="text-xl text-placeholderText">
+            <p className="text-xl text-placeholder-text">
               A complete development environment ready to go
             </p>
           </div>
@@ -221,13 +222,13 @@ export const Component = () => {
               >
                 <div className="w-12 h-12 bg-fill rounded-lg flex items-center justify-center mb-4 group-hover:bg-fill-secondary transition-colors">
                   <i
-                    className={`${feature.icon} w-6 h-6 text-placeholderText group-hover:text-text`}
+                    className={`${feature.icon} w-6 h-6 text-placeholder-text group-hover:text-text`}
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-text mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-placeholderText leading-relaxed">
+                <p className="text-placeholder-text leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -241,7 +242,7 @@ export const Component = () => {
             <h2 className="text-2xl font-semibold text-text mb-4">
               Interactive Components
             </h2>
-            <p className="text-placeholderText">
+            <p className="text-placeholder-text">
               Try out the included UI components
             </p>
           </div>
@@ -285,7 +286,7 @@ export const Component = () => {
                             ${
                               isStarred
                                 ? 'bg-yellow/10 border-yellow text-yellow'
-                                : 'hover:border-border/70 text-placeholderText hover:text-text bg-fill'
+                                : 'hover:border-border/70 text-placeholder-text hover:text-text bg-fill'
                             }
                           `}
                         >
@@ -312,7 +313,7 @@ export const Component = () => {
                             ${
                               isLiked
                                 ? 'bg-red/10 border-red text-red'
-                                : 'hover:border-border/70 text-placeholderText hover:text-text bg-fill'
+                                : 'hover:border-border/70 text-placeholder-text hover:text-text bg-fill'
                             }
                           `}
                         >
@@ -337,7 +338,7 @@ export const Component = () => {
                           '_blank',
                         )
                       }
-                      className="p-2 border size-10 border-border rounded-lg hover:border-border/70 text-placeholderText hover:text-text transition-all bg-fill hover:bg-fill-secondary"
+                      className="p-2 border size-10 border-border rounded-lg hover:border-border/70 text-placeholder-text hover:text-text transition-all bg-fill hover:bg-fill-secondary"
                     >
                       <i className="i-mingcute-github-line w-4 h-4" />
                     </button>
@@ -417,7 +418,7 @@ export const Component = () => {
                     <h4 className="text-sm font-medium text-text">Sliders</h4>
                     <div className="space-y-6">
                       <div>
-                        <label className="block text-sm text-placeholderText mb-2">
+                        <label className="block text-sm text-placeholder-text mb-2">
                           Primary Slider
                         </label>
                         <Slider
@@ -428,7 +429,7 @@ export const Component = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm text-placeholderText mb-2">
+                        <label className="block text-sm text-placeholder-text mb-2">
                           Secondary Slider
                         </label>
                         <Slider
@@ -446,7 +447,7 @@ export const Component = () => {
               {/* Context Menu Demo */}
               <div className="mt-12 pt-8 border-t border-border">
                 <h3 className="font-medium text-text mb-4">Context Menu</h3>
-                <p className="text-sm text-placeholderText mb-4">
+                <p className="text-sm text-placeholder-text mb-4">
                   Right-click on the card below to see the context menu in
                   action
                 </p>
@@ -455,11 +456,11 @@ export const Component = () => {
                   <ContextMenuTrigger>
                     <div className="p-6 border-2 border-dashed border-border rounded-lg hover:border-border/70 transition-colors cursor-pointer bg-fill/20 hover:bg-fill/40">
                       <div className="text-center">
-                        <i className="i-mingcute-settings-3-line w-8 h-8 text-placeholderText mx-auto mb-2" />
+                        <i className="i-mingcute-settings-3-line w-8 h-8 text-placeholder-text mx-auto mb-2" />
                         <p className="text-sm font-medium text-text">
                           Right-click me!
                         </p>
-                        <p className="text-xs text-placeholderText mt-1">
+                        <p className="text-xs text-placeholder-text mt-1">
                           Try the context menu functionality
                         </p>
                       </div>
@@ -538,7 +539,7 @@ export const Component = () => {
             <h2 className="text-2xl font-semibold text-text mb-4">
               Quick Start
             </h2>
-            <p className="text-placeholderText mb-8">
+            <p className="text-placeholder-text mb-8">
               Get up and running in less than a minute
             </p>
 
@@ -549,18 +550,18 @@ export const Component = () => {
                   <div className="w-3 h-3 bg-yellow rounded-full" />
                   <div className="w-3 h-3 bg-green rounded-full" />
                 </div>
-                <span className="text-placeholderText text-sm font-mono">
+                <span className="text-placeholder-text text-sm font-mono">
                   Terminal
                 </span>
               </div>
               <div className="font-mono text-sm space-y-2">
-                <div className="text-placeholderText"># Clone and install</div>
+                <div className="text-placeholder-text"># Clone and install</div>
                 <div className="text-green">pnpm install</div>
-                <div className="text-placeholderText mt-4">
+                <div className="text-placeholder-text mt-4">
                   # Start development server
                 </div>
                 <div className="text-green">pnpm dev</div>
-                <div className="text-placeholderText mt-4">
+                <div className="text-placeholder-text mt-4">
                   # Build for production
                 </div>
                 <div className="text-green">pnpm build</div>

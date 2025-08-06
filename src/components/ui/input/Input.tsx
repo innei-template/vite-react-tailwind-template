@@ -16,18 +16,18 @@ const inputStyles = tv({
     // text color
     'text-text',
     // placeholder color
-    'placeholder:text-placeholderText',
+    'placeholder:text-placeholder-text',
     // background color
     'bg-background',
     // disabled
-    'disabled:border-border disabled:bg-disabledControl disabled:text-disabledText',
+    'disabled:border-border disabled:bg-disabled-control disabled:text-disabled-text',
 
     // file
     [
       'file:-my-2 file:-ml-2.5 file:cursor-pointer file:rounded-l-[5px] file:rounded-r-none file:border-0 file:px-3 file:py-2 file:outline-hidden focus:outline-hidden disabled:pointer-events-none file:disabled:pointer-events-none',
-      'file:border-solid file:border-border file:bg-fill file:text-placeholderText file:hover:bg-fill-secondary',
+      'file:border-solid file:border-border file:bg-fill file:text-placeholder-text file:hover:bg-fill-secondary',
       'file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem]',
-      'file:disabled:bg-disabledControl file:disabled:text-disabledText',
+      'file:disabled:bg-disabled-control file:disabled:text-disabled-text',
     ],
     // focus
     focusInput,
@@ -89,7 +89,7 @@ const Input = ({
             // base
             'pointer-events-none absolute bottom-0 left-2 flex h-full items-center justify-center',
             // text color
-            'text-placeholderText',
+            'text-placeholder-text',
           )}
         >
           <RiSearchLine
@@ -110,7 +110,7 @@ const Input = ({
               // base
               'h-fit w-fit rounded-xs outline-hidden transition-all',
               // text
-              'text-placeholderText',
+              'text-placeholder-text',
               // hover
               'hover:text-text',
               focusRing,

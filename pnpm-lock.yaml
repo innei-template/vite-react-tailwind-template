@@ -12,8 +12,8 @@ importers:
         specifier: 2.2.7
         version: 2.2.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@pastel-palette/tailwindcss':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2
+        specifier: 1.0.0-canary.0
+        version: 1.0.0-canary.0
       '@radix-ui/react-accordion':
         specifier: 1.2.11
         version: 1.2.11(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -726,8 +726,8 @@ packages:
   '@pastel-palette/colors@1.0.0-beta.2':
     resolution: {integrity: sha512-5mzaJaSlG2YdEh++XxHL49Q5NYDpXU/++1Dj72c/draZVNQf8PeTfkaszASLljtRboDcAkGMrm644NgKFsn09g==}
 
-  '@pastel-palette/tailwindcss@1.0.0-beta.2':
-    resolution: {integrity: sha512-C62vt6j2jratovh9VAW8ivV9b+T4f7BpkNZkQQeyMuwatLXUseedmwKVjr05+ASBw4Jm7c4R6yEcbnXjBxqp4Q==}
+  '@pastel-palette/tailwindcss@1.0.0-canary.0':
+    resolution: {integrity: sha512-wU7/hix95ufkFSTPadDycgnn1Wwy51NCK73Y+pGiordOoU41dY1cj6i3b7wNyroYiqJUZyYMsVircPW3aA+ydw==}
 
   '@pivanov/utils@0.0.2':
     resolution: {integrity: sha512-q9CN0bFWxWgMY5hVVYyBgez1jGiLBa6I+LkG37ycylPhFvEGOOeaADGtUSu46CaZasPnlY8fCdVJZmrgKb1EPA==}
@@ -4222,7 +4222,7 @@ snapshots:
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.6
-      synckit: 0.11.8
+      synckit: 0.11.11
       tailwind-api-utils: 1.0.2(tailwindcss@4.1.11)
       tailwindcss: 4.1.11
 
@@ -4337,7 +4337,7 @@ snapshots:
     dependencies:
       culori: 4.0.2
 
-  '@pastel-palette/tailwindcss@1.0.0-beta.2':
+  '@pastel-palette/tailwindcss@1.0.0-canary.0':
     dependencies:
       '@pastel-palette/colors': 1.0.0-beta.2
 
