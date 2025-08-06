@@ -37,9 +37,9 @@ const buttonVariants = tv({
         // background color
         'bg-background',
         // hover color
-        'hover:bg-fill hover:border-border/70 shadow-none hover:shadow-sm',
+        'hover:bg-fill-secondary hover:border-border shadow-none hover:shadow-sm',
         // active state
-        'active:bg-fill-secondary active:scale-[0.98]',
+        'active:bg-fill-tertiary active:scale-[0.98]',
         // disabled
         'disabled:bg-fill disabled:text-disabledText disabled:border-border',
       ],
@@ -53,9 +53,9 @@ const buttonVariants = tv({
         // background color
         'bg-fill',
         // hover color
-        'hover:bg-fill-secondary hover:shadow-sm',
+        'hover:bg-fill-tertiary hover:shadow-sm',
         // active state
-        'active:bg-fill-tertiary active:scale-[0.98]',
+        'active:bg-fill-quaternary active:scale-[0.98]',
         // disabled
         'disabled:bg-fill disabled:text-disabledText',
       ],
@@ -67,9 +67,9 @@ const buttonVariants = tv({
         // text color
         'text-placeholderText',
         // hover color
-        'bg-transparent hover:bg-fill/80 hover:text-text',
+        'bg-transparent hover:bg-fill hover:text-text',
         // active state
-        'active:bg-fill active:scale-[0.98]',
+        'active:bg-fill-secondary active:scale-[0.98]',
         // disabled
         'disabled:text-disabledText',
       ],
