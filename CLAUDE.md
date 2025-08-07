@@ -78,7 +78,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **LazyMotion Integration**: Project uses Framer Motion with LazyMotion for optimized bundle size
 - **Usage Rule**: Always use `m.` instead of `motion.` when creating animated components
-- **Import**: `import { m } from 'framer/react'`
+- **Import**: `import { m } from 'motion/react'`
 - **Examples**: `m.div`, `m.button`, `m.span` (not `motion.div`, `motion.button`, etc.)
 - **Benefits**: Reduces bundle size while maintaining all Framer Motion functionality
 
