@@ -1,5 +1,5 @@
-// Icons now use Tailwind CSS mingcute icons
 import { useState } from 'react'
+import { toast } from 'sonner'
 
 import { Button } from '~/components/ui/button/Button'
 import { Checkbox } from '~/components/ui/checkbox/Checkbox'
@@ -12,8 +12,20 @@ import {
   ContextMenuSeparator,
   ContextMenuTrigger,
 } from '~/components/ui/context-menu/context-menu'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '~/components/ui/dialog/Dialog'
 import { Divider } from '~/components/ui/divider/Divider'
 import { Input } from '~/components/ui/input/Input'
+import { Label } from '~/components/ui/label/Label'
+import { BasePrompt, Modal } from '~/components/ui/modal'
+import { SegmentTab } from '~/components/ui/segment-tab/SegmentTab'
 import {
   Select,
   SelectContent,
@@ -22,6 +34,7 @@ import {
   SelectValue,
 } from '~/components/ui/select/Select'
 import { Slider } from '~/components/ui/slider/Slider'
+import { Switch } from '~/components/ui/switch'
 import {
   Tooltip,
   TooltipContent,
@@ -39,6 +52,11 @@ export const Component = () => {
   const [showNotifications, setShowNotifications] = useState(true)
   const [autoSave, setAutoSave] = useState(false)
 
+  const [enableSound, setEnableSound] = useState(true)
+  const [selectedTab, setSelectedTab] = useState('overview')
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
   const theme = useThemeAtomValue()
   const setTheme = useSetTheme()
 
@@ -55,6 +73,41 @@ export const Component = () => {
   const handleContextAction = (_action: string) => {
     // You can add actual functionality here
   }
+
+  const handlePromptDemo = () => {
+    Modal.present(BasePrompt, {
+      title: 'Delete Item',
+      description:
+        'This action cannot be undone. Are you sure you want to delete this item?',
+      variant: 'danger',
+      onConfirmText: 'Delete',
+      onCancelText: 'Cancel',
+      onConfirm: () => {
+        toast.success('Item deleted!')
+      },
+      onCancel: () => {
+        toast.error('Delete cancelled')
+      },
+    })
+  }
+
+  const tabItems = [
+    {
+      value: 'overview',
+      label: 'Overview',
+      icon: <i className="i-mingcute-home-4-line w-4 h-4" />,
+    },
+    {
+      value: 'components',
+      label: 'Components',
+      icon: <i className="i-mingcute-grid-line w-4 h-4" />,
+    },
+    {
+      value: 'settings',
+      label: 'Settings',
+      icon: <i className="i-mingcute-settings-3-line w-4 h-4" />,
+    },
+  ]
 
   const themeOptions = [
     { value: 'light', icon: 'i-mingcute-sun-line', label: 'Light' },
@@ -243,7 +296,8 @@ export const Component = () => {
               Interactive Components
             </h2>
             <p className="text-placeholder-text">
-              Try out the included UI components
+              Try out the included UI components - from basic forms to advanced
+              interactions
             </p>
           </div>
 
@@ -438,6 +492,126 @@ export const Component = () => {
                           step={1}
                           variant="secondary"
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* New Components Demo */}
+              <div className="mt-12 pt-8 border-t border-border">
+                <h3 className="font-medium text-text mb-6">New Components</h3>
+
+                <div className="space-y-8">
+                  {/* Dialog and Modal Examples */}
+                  <div>
+                    <h4 className="text-sm font-medium text-text mb-4">
+                      Dialog & Modal System
+                    </h4>
+                    <div className="flex gap-3 flex-wrap">
+                      <Dialog
+                        open={isDialogOpen}
+                        onOpenChange={setIsDialogOpen}
+                      >
+                        <DialogTrigger asChild>
+                          <Button variant="secondary">Open Dialog</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Example Dialog</DialogTitle>
+                            <DialogDescription>
+                              This is a customizable dialog component with
+                              smooth animations.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="py-4">
+                            <p className="text-sm text-text-secondary">
+                              Dialogs support custom animation directions and
+                              spring physics for natural movement.
+                            </p>
+                          </div>
+                          <DialogFooter>
+                            <Button variant="primary">Confirm</Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+
+                      <Button variant="destructive" onClick={handlePromptDemo}>
+                        Show Prompt
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Switch Examples */}
+                  <div>
+                    <h4 className="text-sm font-medium text-text mb-4">
+                      Switch Components
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <Label htmlFor="sound-switch">Enable Sound</Label>
+                          <p className="text-sm text-text-secondary">
+                            Play sound effects
+                          </p>
+                        </div>
+                        <Switch
+                          id="sound-switch"
+                          checked={enableSound}
+                          onCheckedChange={setEnableSound}
+                          thumbIcon={<i className="i-mingcute-volume-line" />}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SegmentTab Example */}
+                  <div>
+                    <h4 className="text-sm font-medium text-text mb-4">
+                      Segment Tab Control
+                    </h4>
+                    <div className="space-y-4">
+                      <SegmentTab
+                        items={tabItems}
+                        value={selectedTab}
+                        onChange={setSelectedTab}
+                      />
+                      <div className="p-4 bg-fill/30 rounded-lg border border-border">
+                        <div className="text-sm text-text">
+                          {selectedTab === 'overview' && (
+                            <div>
+                              <h5 className="font-medium mb-2">
+                                Overview Content
+                              </h5>
+                              <p className="text-text-secondary">
+                                This shows the overview section with general
+                                information.
+                              </p>
+                            </div>
+                          )}
+                          {selectedTab === 'components' && (
+                            <div>
+                              <h5 className="font-medium mb-2">
+                                Components Content
+                              </h5>
+                              <p className="text-text-secondary">
+                                Here you can find all available UI components
+                                and their usage examples.
+                              </p>
+                            </div>
+                          )}
+                          {selectedTab === 'settings' && (
+                            <div>
+                              <h5 className="font-medium mb-2">
+                                Settings Content
+                              </h5>
+                              <p className="text-text-secondary">
+                                Configure your application preferences and
+                                options here.
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

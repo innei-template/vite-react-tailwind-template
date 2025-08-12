@@ -3,6 +3,7 @@ import { Provider } from 'jotai'
 import { LazyMotion, MotionConfig } from 'motion/react'
 import type { FC, PropsWithChildren } from 'react'
 
+import { ModalContainer } from '~/components/ui/modal'
 import { Toaster } from '~/components/ui/sonner'
 import { jotaiStore } from '~/lib/jotai'
 import { queryClient } from '~/lib/query-client'
@@ -24,6 +25,7 @@ export const RootProviders: FC<PropsWithChildren> = ({ children }) => (
           <StableRouterProvider />
           <SettingSync />
           <ContextMenuProvider />
+          <ModalContainer />
           {children}
         </Provider>
       </QueryClientProvider>

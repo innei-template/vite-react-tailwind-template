@@ -42,3 +42,5 @@ export const hasErrorInput = [
   // ring color
   'ring-red/20',
 ]
+
+export { default as cn } from 'clsx'

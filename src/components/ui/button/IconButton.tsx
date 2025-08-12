@@ -1,10 +1,6 @@
 'use client'
 
-import type {
-  HTMLMotionProps,
-  MotionProps,
-  Transition,
-} from 'motion/react'
+import type { HTMLMotionProps, MotionProps, Transition } from 'motion/react'
 import { AnimatePresence, m } from 'motion/react'
 import * as React from 'react'
 

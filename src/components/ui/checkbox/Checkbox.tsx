@@ -8,9 +8,16 @@ import * as React from 'react'
 import { clsxm } from '~/lib/cn'
 
 type CheckboxProps = React.ComponentProps<typeof CheckboxPrimitive.Root> &
-  HTMLMotionProps<'button'>
+  HTMLMotionProps<'button'> & {
+    indeterminate?: boolean
+  }
 
-function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
+function Checkbox({
+  className,
+  onCheckedChange,
+  indeterminate,
+  ...props
+}: CheckboxProps) {
   const [isChecked, setIsChecked] = React.useState(
     props?.checked ?? props?.defaultChecked ?? false,
   )
@@ -18,6 +25,13 @@ function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
   React.useEffect(() => {
     if (props?.checked !== undefined) setIsChecked(props.checked)
   }, [props?.checked])
+
+  // Determine the actual state including indeterminate
+  const checkboxState = indeterminate
+    ? 'indeterminate'
+    : isChecked
+      ? 'checked'
+      : 'unchecked'
 
   const handleCheckedChange = React.useCallback(
     (checked: boolean) => {
@@ -36,7 +50,8 @@ function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
       <motion.button
         data-slot="checkbox"
         className={clsxm(
-          'peer size-5 flex items-center justify-center shrink-0 rounded-sm bg-fill transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-background',
+          'peer size-5 flex items-center justify-center shrink-0 rounded-sm bg-fill transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=checked]:text-white',
+          indeterminate && 'bg-accent text-white',
           className,
         )}
         whileTap={{ scale: 0.95 }}
@@ -53,8 +68,9 @@ function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
             stroke="currentColor"
             className="size-3.5"
             initial="unchecked"
-            animate={isChecked ? 'checked' : 'unchecked'}
+            animate={checkboxState}
           >
+            {/* Checkmark path */}
             <motion.path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -73,6 +89,43 @@ function Checkbox({ className, onCheckedChange, ...props }: CheckboxProps) {
                   opacity: 0,
                   transition: {
                     duration: 0.2,
+                  },
+                },
+                indeterminate: {
+                  pathLength: 0,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.1,
+                  },
+                },
+              }}
+            />
+            {/* Indeterminate line */}
+            <motion.path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 12h12"
+              variants={{
+                checked: {
+                  pathLength: 0,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.1,
+                  },
+                },
+                unchecked: {
+                  pathLength: 0,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.1,
+                  },
+                },
+                indeterminate: {
+                  pathLength: 1,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.2,
+                    delay: 0.1,
                   },
                 },
               }}

@@ -9,10 +9,10 @@ import { cx, focusRing } from '~/lib/cn'
 
 const buttonVariants = tv({
   base: [
-    // base - 调整圆角和间距
-    'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border px-4 py-2 text-center text-sm font-medium shadow-sm transition-all duration-200 ease-out',
+    // base - adjust border radius and spacing
+    'relative inline-flex items-center justify-center whitespace-nowrap rounded-lg border text-center font-medium shadow-sm transition-all duration-200 ease-out',
     // disabled
-    'disabled:pointer-events-none disabled:shadow-none disabled:bg-disabled-control disabled:text-disabled-text',
+    'disabled:pointer-events-none disabled:shadow-none disabled:text-disabled-text',
     // focus
     focusRing,
   ],
@@ -28,6 +28,7 @@ const buttonVariants = tv({
         'hover:bg-accent/90',
         // active state
         'active:scale-[0.98]',
+        'disabled:bg-disabled-control',
       ],
       secondary: [
         // border
@@ -42,6 +43,7 @@ const buttonVariants = tv({
         'active:bg-fill-tertiary active:scale-[0.98]',
         // disabled
         'disabled:bg-fill disabled:text-disabled-text disabled:border-border',
+        'disabled:bg-disabled-control',
       ],
       light: [
         // base
@@ -65,11 +67,11 @@ const buttonVariants = tv({
         // border
         'border-transparent',
         // text color
-        'text-placeholder-text',
+        'text-text-secondary',
         // hover color
-        'bg-transparent hover:bg-fill hover:text-text',
+        'bg-transparent hover:bg-fill/80 hover:text-text',
         // active state
-        'active:bg-fill-secondary active:scale-[0.98]',
+        'active:bg-fill active:scale-[0.98]',
         // disabled
         'disabled:text-disabled-text',
       ],
@@ -88,9 +90,14 @@ const buttonVariants = tv({
         'disabled:bg-red/50 disabled:text-background/70',
       ],
     },
+    size: {
+      sm: ['px-3 py-1.5 text-xs rounded-md'],
+      md: ['px-4 py-2 text-sm rounded-lg'],
+    },
   },
   defaultVariants: {
     variant: 'primary',
+    size: 'md',
   },
 })
 
@@ -100,6 +107,7 @@ interface ButtonProps
   asChild?: boolean
   isLoading?: boolean
   loadingText?: string
+  size?: 'sm' | 'md'
 }
 
 const Button = ({
@@ -110,6 +118,7 @@ const Button = ({
   className,
   disabled,
   variant,
+  size = 'md',
   children,
   ...props
 }: ButtonProps & { ref?: React.RefObject<HTMLButtonElement | null> }) => {
@@ -117,7 +126,7 @@ const Button = ({
   return (
     <Component
       ref={forwardedRef}
-      className={cx(buttonVariants({ variant }), className)}
+      className={cx(buttonVariants({ variant, size }), className)}
       disabled={disabled || isLoading}
       tremor-id="tremor-raw"
       {...props}

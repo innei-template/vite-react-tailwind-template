@@ -26,7 +26,7 @@ const ContextMenuSubTrigger = ({
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={clsxm(
-      'focus:bg-accent text-text data-[state=open]:bg-accent data-[state=open]:text-background flex select-none items-center rounded-[5px] px-2.5 py-1.5 outline-none',
+      'focus:bg-accent focus:text-white text-foreground data-[state=open]:bg-accent data-[state=open]:text-white flex select-none items-center rounded-[5px] px-2.5 py-1.5 outline-none',
       inset && 'pl-8',
       'flex items-center justify-center gap-2',
       className,
@@ -54,7 +54,7 @@ const ContextMenuSubContent = ({
       ref={ref}
       className={clsxm(
         'bg-material-medium backdrop-blur-background text-text text-body',
-        'min-w-32 overflow-hidden',
+        'min-w-32 overflow-hidden border-border',
         'rounded-[6px] border p-1',
         'shadow-context-menu',
         'z-[10061]',
@@ -100,8 +100,8 @@ const ContextMenuItem = ({
   <ContextMenuPrimitive.Item
     ref={ref}
     className={clsxm(
-      'cursor-menu focus:bg-accent focus:text-background text-sm text-text relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      'data-[highlighted]:bg-accent data-[highlighted]:text-background focus-within:outline-transparent',
+      'cursor-menu focus:bg-accent focus:text-white text-sm text-foreground relative flex select-none items-center rounded-[5px] px-2.5 py-1 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'data-[highlighted]:bg-accent data-[highlighted]:text-white focus-within:outline-transparent',
       'h-[28px]',
       inset && 'pl-8',
       className,
@@ -125,7 +125,7 @@ const ContextMenuCheckboxItem = ({
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={clsxm(
-      'cursor-checkbox focus:bg-accent text-sm text-text relative flex select-none items-center rounded-[5px] px-8 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'cursor-checkbox focus:bg-accent text-sm text-foreground relative flex select-none items-center rounded-[5px] px-8 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'focus-within:outline-transparent',
       'h-[28px]',
       className,

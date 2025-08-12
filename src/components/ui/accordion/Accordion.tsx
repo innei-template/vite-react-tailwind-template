@@ -114,7 +114,7 @@ function AccordionTrigger({
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={transition}
           >
-            <i className="text-placeholder-text i-mingcute-down-line size-4 shrink-0" />
+            <i className="text-text-secondary i-mingcute-down-line size-4 shrink-0" />
           </motion.div>
         )}
       </AccordionPrimitive.Trigger>
