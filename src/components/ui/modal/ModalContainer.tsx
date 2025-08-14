@@ -1,6 +1,7 @@
 import { useAtomValue } from 'jotai'
 import { AnimatePresence } from 'motion/react'
 import { useEffect, useMemo, useState } from 'react'
+import { useEventCallback } from 'usehooks-ts'
 
 import { Dialog, DialogContent } from '~/components/ui/dialog'
 import { cn } from '~/lib/cn'
@@ -47,7 +48,7 @@ const ModalWrapper = ({ item }: { item: ModalItem }) => {
   }
 
   // After exit animation, remove from store
-  const handleAnimationComplete = () => {
+  const handleAnimationComplete = useEventCallback(() => {
     if (!open) {
       const items = jotaiStore.get(modalItemsAtom)
       jotaiStore.set(
@@ -55,7 +56,7 @@ const ModalWrapper = ({ item }: { item: ModalItem }) => {
         items.filter((m) => m.id !== item.id),
       )
     }
-  }
+  })
 
   const Component = item.component as ModalComponent<any>
 
