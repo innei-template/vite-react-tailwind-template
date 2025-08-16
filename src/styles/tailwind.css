@@ -61,10 +61,10 @@ body {
   /* Blur */
   --blur-background: 70px;
 
-  /* Shadow */
-  --shadow-context-menu:
-    0px 0px 1px rgba(0, 0, 0, 0.12), 0px 0px 1.5px rgba(0, 0, 0, 0.04),
-    0px 7px 22px rgba(0, 0, 0, 0.08);
+  /* Box shadow */
+  --box-shadow-context-menu:
+    rgba(0, 0, 0, 0.067) 0px 3px 8px, rgba(0, 0, 0, 0.067) 0px 2px 5px,
+    rgba(0, 0, 0, 0.067) 0px 1px 1px;
 
   /* Font */
   --text-large-title: 1.625rem;

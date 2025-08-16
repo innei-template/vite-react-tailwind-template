@@ -125,7 +125,7 @@ const ContextMenuCheckboxItem = ({
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={clsxm(
-      'cursor-checkbox focus:bg-accent text-sm text-foreground relative flex select-none items-center rounded-[5px] px-8 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'cursor-checkbox focus:bg-accent focus:text-white text-sm text-foreground relative flex select-none items-center rounded-[5px] px-8 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'focus-within:outline-transparent',
       'h-[28px]',
       className,
