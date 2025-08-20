@@ -14,10 +14,12 @@ const ContextMenuSubTrigger = ({
   ref,
   className,
   inset,
+  hasIcon,
   children,
   ...props
 }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {
   inset?: boolean
+  hasIcon?: boolean
 } & {
   ref?: React.Ref<React.ElementRef<
     typeof ContextMenuPrimitive.SubTrigger
@@ -26,8 +28,9 @@ const ContextMenuSubTrigger = ({
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={clsxm(
-      'focus:bg-accent focus:text-white text-foreground data-[state=open]:bg-accent data-[state=open]:text-white flex select-none items-center rounded-[5px] px-2.5 py-1.5 outline-none',
+      'focus:bg-accent relative focus:text-white text-foreground data-[state=open]:bg-accent data-[state=open]:text-white flex select-none items-center rounded-[5px] px-2.5 py-1.5 outline-none',
       inset && 'pl-8',
+      hasIcon && 'pl-8',
       'flex items-center justify-center gap-2',
       className,
       props.disabled && 'cursor-not-allowed opacity-30',
@@ -91,9 +94,11 @@ const ContextMenuItem = ({
   ref,
   className,
   inset,
+  hasIcon,
   ...props
 }: React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & {
   inset?: boolean
+  hasIcon?: boolean
 } & {
   ref?: React.Ref<React.ElementRef<typeof ContextMenuPrimitive.Item> | null>
 }) => (
@@ -104,6 +109,8 @@ const ContextMenuItem = ({
       'data-[highlighted]:bg-accent data-[highlighted]:text-white focus-within:outline-transparent',
       'h-[28px]',
       inset && 'pl-8',
+      hasIcon ? 'px-8' : 'pr-8',
+
       className,
     )}
     {...props}
@@ -121,19 +128,27 @@ const ContextMenuCheckboxItem = ({
   ref?: React.Ref<React.ElementRef<
     typeof ContextMenuPrimitive.CheckboxItem
   > | null>
+} & {
+  hasIcon?: boolean
 }) => (
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={clsxm(
-      'cursor-checkbox focus:bg-accent focus:text-white text-sm text-foreground relative flex select-none items-center rounded-[5px] px-8 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'cursor-checkbox focus:bg-accent focus:text-white text-sm text-foreground relative flex select-none items-center rounded-[5px] py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'focus-within:outline-transparent',
       'h-[28px]',
+      props.hasIcon ? 'px-8 pr-8' : 'px-8',
       className,
     )}
     checked={checked}
     {...props}
   >
-    <span className="absolute left-2 flex items-center justify-center">
+    <span
+      className={clsxm(
+        'absolute flex items-center justify-center',
+        props.hasIcon ? 'right-2' : 'left-2',
+      )}
+    >
       <ContextMenuPrimitive.ItemIndicator asChild>
         <i className="i-mingcute-check-fill size-3" />
       </ContextMenuPrimitive.ItemIndicator>
